@@ -1,5 +1,6 @@
 import Head from 'next/head'
 import AnimatedBackground from '@components/AnimatedBackground'
+import HomeBanner from '@components/HomeBanner'
 
 export default function Home() {
   return (
@@ -10,6 +11,7 @@ export default function Home() {
         </div>
       </div>
       <AnimatedBackground />
+      <HomeBanner />
     </div>
   )
 }
