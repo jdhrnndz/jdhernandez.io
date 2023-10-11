@@ -1,6 +1,7 @@
 import Head from 'next/head'
 import AnimatedBackground from '@components/AnimatedBackground'
 import HomeBanner from '@components/HomeBanner'
+import Navigation from '@components/Navigation'
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
       </div>
       <AnimatedBackground />
       <HomeBanner />
+      <Navigation />
     </div>
   )
 }
