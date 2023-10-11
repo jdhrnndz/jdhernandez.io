@@ -1,12 +1,15 @@
 import Head from 'next/head'
-import Header from '@components/Header'
-import Footer from '@components/Footer'
-import AnimBG from '@components/AnimBG'
+import AnimatedBackground from '@components/AnimatedBackground'
 
 export default function Home() {
   return (
     <div className="container">
-      <AnimBG />
+      <div className="header-wrap">
+        <div className="header">
+          <h1>JD Hernandez</h1>
+        </div>
+      </div>
+      <AnimatedBackground />
     </div>
   )
 }
