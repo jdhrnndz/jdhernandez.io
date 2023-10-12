@@ -2,14 +2,14 @@
 
 const HomeBanner = () => {
   return (
-    <div className="banner">
+    <div className="banner rounded">
       <div className="corner"></div>
       <div className="corner"></div>
       <div className="corner"></div>
       <div className="corner"></div>
-      <img className="image-rounded" alt="JD Hernandez's picture" src=""/>
+      <img className="image-rounded" alt="JD Hernandez's picture" src="/jdhernandez.jpg"/>
       <p><i>Hello!</i> I am </p>
-      <h1>JD Hernandez</h1>
+      <h1 className="text-3xl font-bold">JD Hernandez</h1>
       <hr />
       <span>Software Developer</span>
     </div>
