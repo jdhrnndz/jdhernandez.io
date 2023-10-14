@@ -6,16 +6,15 @@ import ProjectList from '@components/ProjectList'
 import { useState } from 'react';
 import routes from 'utils/routes';
 import Contact from '@components/Contact'
+import SiteHeader from '@components/SiteHeader'
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useState(routes.About);
   return (
-    <div className="container">
-      <div className="header-wrap">
-        <div className="header text-xl font-bold">
-          <h1>( ͡° ͜ʖ ͡°)</h1>
-        </div>
-      </div>
+    <div className="container h-screen flex flex-col">
+      <SiteHeader>
+        <Navigation navTo={setCurrentPage} />
+      </SiteHeader>
       <AnimatedBackground />
       {
         currentPage === routes.About &&
@@ -29,7 +28,6 @@ export default function Home() {
         currentPage === routes.Contact &&
         <Contact />
       }
-      <Navigation navTo={setCurrentPage} />
     </div>
   )
 }
