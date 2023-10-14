@@ -87,7 +87,7 @@ const PROJECTS = [
 const Project = ({title, description, skills, company}) => {
   return (
     title &&
-    <div className="project rounded bg-white">
+    <div className="rounded bg-white text-celadon-green font-mono p-8 cursor-pointer outline outline-2 outline-celadon-green">
       <h1 className="text-2xl">{title}</h1>
       <hr className="mt-2" />
       <div className="mt-3 text-l">
@@ -112,7 +112,7 @@ const Project = ({title, description, skills, company}) => {
 
 const ProjectList = () => {
   return (
-    <div className="mt-20 mx-auto grid grid-cols-4 gap-4">
+    <div className="mx-auto grid grid-cols-4 gap-4">
       {
         PROJECTS.map((item, index) => (
           <Project key={index} {...item} />

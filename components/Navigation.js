@@ -25,15 +25,15 @@ const BUTTON_DATA = [
 
 const NavButtons = ({ title, displaySvgData, selectedSvgData, navTo, onClick }) => {
   return (
-    <button className="rounded" onClick={() => onClick(navTo)}>
+    <button className="rounded z-20" onClick={() => onClick(navTo)}>
       <i className="hover-fill">{title}</i>
       <i className="hover-fill secondary-fill">{title}</i>
       <i className="inactive-fill">{title}</i>
-      <svg className="display" viewBox="0 0 24 24">
-        <path fill="#757575" d={displaySvgData} />
+      <svg className="display fill-neutral-500" viewBox="0 0 24 24">
+        <path d={displaySvgData} />
       </svg>
-      <svg className="selected" viewBox="0 0 24 24">
-        <path fill="#328173" d={selectedSvgData} />
+      <svg className="selected fill-celadon-green" viewBox="0 0 24 24">
+        <path d={selectedSvgData} />
       </svg>
       <span>{title}</span>
     </button>
@@ -42,14 +42,12 @@ const NavButtons = ({ title, displaySvgData, selectedSvgData, navTo, onClick }) 
 
 const Navigation = ({navTo}) => {
   return (
-    <div className="navigation-wrap">
-      <div className="navigation">
-        {
-          BUTTON_DATA.map(item => (
-            <NavButtons {...item} key={item.title} onClick={navTo} />
-          ))
-        }
-      </div>
+    <div className="navigation">
+      {
+        BUTTON_DATA.map(item => (
+          <NavButtons {...item} key={item.title} onClick={navTo} />
+        ))
+      }
     </div>
   );
 };
