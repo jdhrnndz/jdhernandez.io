@@ -26,6 +26,10 @@ module.exports = {
         'floating-5': 'floating 5s ease-in-out infinite',
         'floating-8': 'floating 8s ease-in-out infinite',
       },
+      flexBasis: {
+        "1/3-gap-4": "calc(33.3% - (2/3 * 1rem))",
+        "1/2-gap-4": "calc(50% - (1/2 * 1rem))",
+      }
     },
     container: {
       center: true,
