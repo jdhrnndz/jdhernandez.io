@@ -53,7 +53,7 @@ export default function HomeBanner ({}) {
           JD Hernandez
         </span>
         <span className="text-4xl w-fit bg-zinc-50 p-6 mt-8">
-          I have around 8 years of experience in making software using JavaScript and other related technologies!
+          With over 8 years of dedicated experience in crafting user-friendly software solutions, I have built expertise in JavaScript and other software development technologies.
         </span>
         <span className="w-fit bg-zinc-50 p-6 mt-8 flex flex-row gap-4 text-center flex-wrap">
           <span
@@ -89,9 +89,9 @@ export default function HomeBanner ({}) {
       <div className="flex flex-col justify-center">
         <div className="relative h-fit w-fit mx-auto p-104">
           <img
-            className="select-none mx-auto min-w-96 max-w-full min-h-96 max-h-full rounded-full border-8 border-zinc-50"
+            className="select-none mx-auto min-w-96 max-w-96 min-h-96 max-h-96 rounded-full border-8 border-zinc-50"
             alt="JD Hernandez's avatar image"
-            src="/jdhernandez.png"
+            src="/jdhernandez.jpg"
           />
           {
             SKILLS_DATA.map(({ animation, name, position, icon }) => (
