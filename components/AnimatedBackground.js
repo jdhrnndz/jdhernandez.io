@@ -117,7 +117,7 @@ const AnimatedBackground = () => {
   setup();
 
   return (
-    <canvas id="animated-bg-canvas" className="-z-[99]"></canvas>
+    <canvas id="animated-bg-canvas" className="max-h-full max-w-full -z-[99]"></canvas>
   );
 }
 
