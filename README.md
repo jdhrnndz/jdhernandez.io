@@ -6,13 +6,13 @@
 Hello, I'm JD. This is my web portfolio.
 
 :scroll:
-Get to know me in the [About](https://jdhrnndz.github.io/about) page
+Get to know me in the [About](https://jdhernandez.io/about) page
 
 :computer:
-See my projects under [Projects](https://jdhrnndz.github.io/projects)
+See my projects under [Projects](https://jdhernandez.io/projects)
 
 :email:
-Reach out and say hello! [Contact](https://jdhrnndz.github.io/contact)
+Reach out and say hello! [Contact](https://jdhernandez.io/contact)
 
 ## Thanks to
 
