@@ -1,6 +1,6 @@
 'use client'
 
-const Contact = () => {
+export default function Contact() {
   return (
     <div className="rounded bg-white text-celadon-green font-mono z-1 p-8 cursor-pointer outline outline-2 outline-celadon-green">
       <div className="text-xl">
@@ -12,5 +12,3 @@ const Contact = () => {
     </div>
   )
 }
-
-export default Contact;
