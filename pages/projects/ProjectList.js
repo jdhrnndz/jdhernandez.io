@@ -35,6 +35,17 @@ const PROJECTS = [
     company: 'VISEO Philippines Inc.',
   },
   {
+    title: 'HCT Life (AXA HK)',
+    description: 'A web app that helps to explore the network of doctors and hospitals working with the insurance provider.',
+    skills: [
+      'JavaScript',
+      'ReactJS',
+      'GraphQL',
+      'Enzyme',
+    ],
+    company: 'VISEO Philippines Inc.',
+  },
+  {
     title: 'Project HaBit',
     description: 'A mobile app where employees can give a colleague a token of appreciation for a job well done.',
     skills: [
@@ -43,29 +54,55 @@ const PROJECTS = [
     company: 'Stratpoint Technologies Inc., Philippines',
   },
   {
-    title: '',
-    description: '',
-    skills: '',
-    company: '',
+    title: 'Broadband Account Management App',
+    description: 'A mobile app where subscribers manage their broadband account.',
+    skills: [
+      'node.js',
+      'mySQL',
+      'AWS Lambda',
+    ],
+    company: 'Stratpoint Technologies Inc., Philippines',
   },
   {
-    title: '',
-    description: '',
-    skills: '',
-    company: '',
+    title: 'Telecom Roaming Subscription Portal',
+    description: 'An e-commerce website that provides subscribers easy access to subscriptions and enables resellers to track customer registrations and sales.',
+    skills: [
+      'ReactJS',
+      'npm',
+      'Adobe Experience Manager',
+      'Jenkins',
+      'Bootstrap',
+    ],
+    company: 'Stratpoint Technologies Inc., Philippines',
   },
   {
-    title: '',
-    description: '',
-    skills: '',
-    company: '',
+    title: 'BatasQC',
+    description: 'A mobile app that provides access to all ordinances and announcements within Quezon City, Philippines.',
+    skills: [
+      'Android',
+      'Kotlin',
+      'DBFlow',
+      'Retrofit',
+    ],
+    company: 'Freelance',
   },
+  {
+    title: 'Personnel Management System',
+    description: 'A website formanaging personnels\' information and their departments, contributions, and violations. Admins have access to audit logs, statistics dashboard, and user privileges.',
+    skills: [
+      'jQuery',
+      'Semantic UI',
+      'PHP',
+      'CodeIgniter',
+    ],
+    company: 'Freelance',
+  }
 ];
 
 const Project = ({title, description, skills, company}) => {
   return (
     title &&
-    <div className="basis-1/3-gap-4 md:basis-1/2-gap-4 sm:basis-full h-fit rounded text-black font-mono cursor-pointer outline outline-2 outline-celadon-green">
+    <div className="basis-1/3-gap-4 md:basis-1/2-gap-4 sm:basis-full h-fit rounded text-black font-mono cursor-pointer outline outline-2 outline-celadon-green mb-4">
       <div className="flex flex-row">
         <div className="bg-celadon-green rounded-br-xl grow-1">
           <div className="p-2">
@@ -87,7 +124,7 @@ const Project = ({title, description, skills, company}) => {
               skills.map((skillName) => (
                 <span
                   key={skillName}
-                  className="select-none inline-flex items-center rounded-md bg-celadon-green px-2 py-1 font-medium text-white"
+                  className="select-none inline-flex items-center rounded-md bg-gray-50 px-2 py-1 font-medium text-celadon-green ring-2 ring-inset ring-celadon-green/10"
                 >
                   {skillName}
                 </span>
