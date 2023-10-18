@@ -10,7 +10,7 @@ const PROJECTS = [
       'NestJS',
       'GraphQL',
     ],
-    company: 'HavenTech Asia',
+    company: 'Full-stack Developer @ HavenTech Asia',
   },
   {
     title: 'AIA Rewards Marketplace CMS',
@@ -21,7 +21,7 @@ const PROJECTS = [
       'dotCMS',
       'Docker',
     ],
-    company: 'VISEO Hong Kong Ltd.',
+    company: 'Back-end Developer @ VISEO Hong Kong Ltd.',
   },
   {
     title: 'Project EMMA (AXA HK)',
@@ -32,7 +32,7 @@ const PROJECTS = [
       'Jest',
       'Enzyme',
     ],
-    company: 'VISEO Philippines Inc.',
+    company: 'Front-end Developer @ VISEO Philippines Inc.',
   },
   {
     title: 'HCT Life (AXA HK)',
@@ -43,7 +43,7 @@ const PROJECTS = [
       'GraphQL',
       'Enzyme',
     ],
-    company: 'VISEO Philippines Inc.',
+    company: 'Front-end Developer @ VISEO Philippines Inc.',
   },
   {
     title: 'Project HaBit',
@@ -51,7 +51,7 @@ const PROJECTS = [
     skills: [
       'Android',
     ],
-    company: 'Stratpoint Technologies Inc., Philippines',
+    company: 'Android Developer @ Stratpoint Technologies Inc., Philippines',
   },
   {
     title: 'Broadband Account Management App',
@@ -61,7 +61,7 @@ const PROJECTS = [
       'mySQL',
       'AWS Lambda',
     ],
-    company: 'Stratpoint Technologies Inc., Philippines',
+    company: 'Back-end Developer @ Stratpoint Technologies Inc., Philippines',
   },
   {
     title: 'Telecom Roaming Subscription Portal',
@@ -73,7 +73,7 @@ const PROJECTS = [
       'Jenkins',
       'Bootstrap',
     ],
-    company: 'Stratpoint Technologies Inc., Philippines',
+    company: 'Front-end Developer @ Stratpoint Technologies Inc., Philippines',
   },
   {
     title: 'BatasQC',
@@ -84,7 +84,7 @@ const PROJECTS = [
       'DBFlow',
       'Retrofit',
     ],
-    company: 'Freelance',
+    company: 'Freelance Android Developer',
   },
   {
     title: 'Personnel Management System',
@@ -95,45 +95,36 @@ const PROJECTS = [
       'PHP',
       'CodeIgniter',
     ],
-    company: 'Freelance',
+    company: 'Freelance Front-end Developer',
   }
 ];
 
 const Project = ({title, description, skills, company}) => {
   return (
     title &&
-    <div className="basis-1/3-gap-4 md:basis-1/2-gap-4 sm:basis-full h-fit rounded text-black font-mono cursor-pointer outline outline-2 outline-celadon-green mb-4">
-      <div className="flex flex-row">
-        <div className="bg-celadon-green rounded-br-xl grow-1">
-          <div className="p-2">
-            <span className="text-2xl text-white">{title}</span>
-          </div>
-        </div>
-        <div className="grow bg-celadon-green">
-          <div className="rounded-tl-xl bg-white w-full h-full"></div>
-        </div>
+    <div className="basis-full h-fit text-stone-700 font-mono cursor-pointer bg-zinc-50 outline outline-2 outline-celadon-green">
+      <div className="bg-celadon-green w-fit px-4 py-2">
+        <span className="text-2xl text-white font-bold">{title}</span>
       </div>
-      <div className="bg-celadon-green">
-        <div className="rounded-tl-xl p-8 bg-white">
-          <div className="">
-            {description}
-          </div>
-          <div className="my-4 flex flex-wrap gap-2">
-            {
-              skills.length > 0 &&
-              skills.map((skillName) => (
-                <span
-                  key={skillName}
-                  className="select-none inline-flex items-center rounded-md bg-gray-50 px-2 py-1 font-medium text-celadon-green ring-2 ring-inset ring-celadon-green/10"
-                >
-                  {skillName}
-                </span>
-              ))
-            }
-          </div>
-          <div className="italic">
-            {company}
-          </div>
+      <div className="p-4">
+        <div className="text-lg">
+          {description}
+        </div>
+        <div className="my-4 flex flex-wrap gap-2">
+          {
+            skills.length > 0 &&
+            skills.map((skillName) => (
+              <span
+                key={skillName}
+                className="select-none inline-flex items-center rounded-md bg-gray-50 px-2 py-1 font-medium text-celadon-green ring-2 ring-inset ring-celadon-green/10"
+              >
+                {skillName}
+              </span>
+            ))
+          }
+        </div>
+        <div className="italic">
+          {company}
         </div>
       </div>
     </div>
@@ -142,7 +133,7 @@ const Project = ({title, description, skills, company}) => {
 
 export default function ProjectList() {
   return (
-    <div className="flex flex-row flex-wrap place-items-start gap-4">
+    <div className="flex flex-row flex-wrap place-items-start gap-4 pb-4">
       {
         PROJECTS.map((item, index) => (
           <Project key={index} {...item} />
