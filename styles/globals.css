@@ -97,14 +97,6 @@ body {
   transition: width 350ms ease-in;
 }
 
-.navigation button svg {
-  display: none;
-}
-
-.navigation button:hover {
-  color: white;
-}
-
 .navigation button:hover .hover-fill {
   width: 150%;
 }
@@ -116,37 +108,4 @@ body {
   -o-transition: width 150ms ease-in-out;
   -ms-transition: width 150ms ease-in-out;
   transition: width 150ms ease-in-out;
-}
-
-[data-tooltip]:before {
-  /* required code */
-  content: attr(data-tooltip);
-  position: absolute;
-  opacity: 0;
-
-  /* customizable */
-  top:0;
-  left:0;
-  padding: 10px 20px;
-  color: theme('colors.celadon-green');
-  border-radius: 4px;
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-
-[data-tooltip]:hover:before {
-  /* required code */
-  opacity: 1;
-
-  /* customizable */
-  background: #fff;
-  border: 1px solid #ccc;
-  left: 1rem;
-  top: 3rem;
-}
-
-.element-exit {
-  margin-left: -10%;
-  opacity: 0;
-  transition: margin-left 300ms cubic-bezier(0.4, 0.0, 0.6, 1) 60ms, opacity 300ms cubic-bezier(0.4, 0.0, 0.6, 1);
 }

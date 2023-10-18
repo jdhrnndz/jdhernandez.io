@@ -29,7 +29,10 @@ module.exports = {
       flexBasis: {
         "1/3-gap-4": "calc(33.3% - (2/3 * 1rem))",
         "1/2-gap-4": "calc(50% - (1/2 * 1rem))",
-      }
+      },
+      backdropBlur: {
+        xs: '2px',
+      },
     },
     container: {
       center: true,
