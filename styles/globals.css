@@ -6,6 +6,13 @@
   .pause {
     animation-play-state: paused;
   }
+  .skew {
+    -webkit-transform: skew(-45deg) translate3d(0, 0, 0);
+    -moz-transform: skew(-45deg) translate3d(0, 0, 0);
+    -o-transform: skew(-45deg) translate3d(0, 0, 0);
+    -ms-transform: skew(-45deg) translate3d(0, 0, 0);
+    transform: skew(-45deg) translate3d(0, 0, 0);
+  }
 }
 
 html,
@@ -18,94 +25,4 @@ body {
 
 body {
   background-color: theme('colors.zinc.50');
-}
-
-.navigation button {
-  display: inline-block;
-  background-color: transparent;
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  letter-spacing: 2px;
-  padding: 8px 20px;
-  font-family: 'Lekton', sans-serif;
-  font-weight: bolder;
-  font-size: 1.2em;
-  color: #4cae5c;
-  border: 2px solid #4cae5c;
-  margin: 6px;
-  overflow: hidden;
-  position: relative;
-}
-
-.navigation button .inactive-fill {
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  letter-spacing: 2px;
-  font-family: 'Lekton', sans-serif;
-  font-weight: bolder;
-  font-size: 1.2em;
-  display: block;
-  position: absolute;
-  height: 100%;
-  background: white;
-  color: transparent;
-  top: 0;
-  left: 0;
-  padding: 8px 20px;
-  z-index: -3;
-}
-
-.navigation button .hover-fill {
-  text-transform: uppercase;
-  text-decoration: none;
-  text-align: center;
-  letter-spacing: 2px;
-  font-family: 'Lekton', sans-serif;
-  font-weight: bolder;
-  font-size: 1.2em;
-  display: block;
-  position: absolute;
-  width: 0px;
-  height: 100%;
-  background: #4cae5c;
-  color: transparent;
-  top: 0;
-  left: -20px;
-  z-index: -1;
-  -webkit-transform: skew(-45deg) translate3d(0, 0, 0);
-  -moz-transform: skew(-45deg) translate3d(0, 0, 0);
-  -o-transform: skew(-45deg) translate3d(0, 0, 0);
-  -ms-transform: skew(-45deg) translate3d(0, 0, 0);
-  transform: skew(-45deg) translate3d(0, 0, 0);
-  -webkit-transition: width 250ms ease-in;
-  -moz-transition: width 250ms ease-in;
-  -o-transition: width 250ms ease-in;
-  -ms-transition: width 250ms ease-in;
-  transition: width 250ms ease-in;
-}
-
-.navigation button .secondary-fill {
-  background: #328173;
-  z-index: -2;
-  transform: skew(-45deg) translate3d(0, 0, 0);
-  -webkit-transition: width 350ms ease-in;
-  -moz-transition: width 350ms ease-in;
-  -o-transition: width 350ms ease-in;
-  -ms-transition: width 350ms ease-in;
-  transition: width 350ms ease-in;
-}
-
-.navigation button:hover .hover-fill {
-  width: 150%;
-}
-
-.navigation button:hover .secondary-fill {
-  width: 150%;
-  -webkit-transition: width 150ms ease-in-out;
-  -moz-transition: width 150ms ease-in-out;
-  -o-transition: width 150ms ease-in-out;
-  -ms-transition: width 150ms ease-in-out;
-  transition: width 150ms ease-in-out;
 }
