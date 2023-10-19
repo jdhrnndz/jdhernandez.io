@@ -15,6 +15,13 @@
   }
 }
 
+@layer base {
+  :root {
+    --color-celadon-green: 47 132 124;
+    --color-asda-green: 125 194 66;
+  }
+}
+
 html,
 body {
   padding: 0;
@@ -25,4 +32,5 @@ body {
 
 body {
   background-color: theme('colors.zinc.50');
+  scrollbar-gutter: stable;
 }
