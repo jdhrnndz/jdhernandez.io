@@ -60,20 +60,20 @@ export default function HomeBanner ({}) {
 
   return (
     <div className="flex-auto grid grid-cols-2 grid-rows-1 selection:bg-asda-green/50">
-      <hgroup className="text-stone-700 text-left font-[Lekton] flex flex-col justify-center">
+      <hgroup className="text-stone-600 text-left font-[Urbanist] flex flex-col justify-center">
         <span className="text-7xl t w-fit bg-zinc-50 p-6 leading-3">
-          <span className="italic">Hello!</span> I am
+          <span className="italic">Hello!</span> I'm
         </span>
-        <span className="text-celadon-green text-8xl w-fit bg-zinc-50 p-6 font-extrabold">
+        <span className="text-celadon-green text-8xl w-fit bg-zinc-50 p-6 font-[Volkhov]">
           JD Hernandez
         </span>
-        <span className="text-4xl w-fit bg-zinc-50 p-6 mt-8">
+        <span className="text-4xl w-fit bg-zinc-50 p-6 mt-8 leading-relaxed">
           With over 8 years of dedicated experience in crafting user-friendly software solutions, I have built expertise in JavaScript and other software development technologies.
         </span>
         <div className="w-fit bg-zinc-50 p-6 mt-8 flex flex-row gap-4 text-center flex-wrap">
           <span
             key="counter"
-            className="group relative w-10 h-10 cursor-pointer select-none inline-flex items-center justify-center rounded-full bg-celadon-green px-2 text-2xl text-white"
+            className="group relative w-10 h-10 cursor-pointer select-none inline-flex items-center justify-center rounded-full bg-celadon-green px-2 text-2xl text-white font-mono"
           >
             {clicked.length}
             <small

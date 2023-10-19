@@ -104,8 +104,8 @@ const PROJECTS = [
 const Project = ({title, description, skills, company}) => {
   return (
     title &&
-    <article className="h-fit w-full text-stone-700 font-mono bg-zinc-50 outline outline-2 outline-celadon-green overflow-hidden max-w-">
-      <header className="text-2xl text-white font-[Lekton] font-bold tracking-wide bg-celadon-green w-fit h-fit px-4 py-1 relative after:bg-inherit after:skew after:h-full after:absolute after:w-12 after:-top-0 after:-right-2 after:shadow-stripes z-0 after:-z-[1]">{title}</header>
+    <article className="h-fit w-full text-stone-700 font-[Urbanist] bg-zinc-50 outline outline-2 outline-celadon-green overflow-hidden">
+      <header className="text-2xl text-white font-bold bg-celadon-green w-fit h-fit px-4 py-1 relative after:bg-inherit after:skew after:h-full after:absolute after:w-12 after:-top-0 after:-right-2 after:shadow-stripes z-0 after:-z-[1]">{title}</header>
       <div className="p-4">
         <main className="text-lg mb-8">
           {description}
@@ -130,7 +130,7 @@ const Project = ({title, description, skills, company}) => {
 
 export default function ProjectList() {
   return (
-    <div className="grid 2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 grid-rows-['masonry'] flex-wrap place-items-start gap-4 pb-4 selection:bg-asda-green/50">
+    <div className="grid 2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 flex-wrap place-items-start gap-4 pb-12 selection:bg-asda-green/50">
       {
         PROJECTS.map((item, index) => (
           <Project key={index} {...item} />
