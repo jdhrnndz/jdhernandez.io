@@ -59,12 +59,12 @@ export default function HomeBanner ({}) {
   const [clicked, setClicked] = useState([]);
 
   return (
-    <div className="flex-auto grid grid-cols-2 grid-rows-1">
+    <div className="flex-auto grid grid-cols-2 grid-rows-1 selection:bg-asda-green/50">
       <div className="text-stone-700 text-left font-[Lekton] flex flex-col justify-center">
         <span className="text-7xl t w-fit bg-zinc-50 p-6 leading-3">
           <i>Hello!</i> I am
         </span>
-        <span className="text-celadon-green text-8xl w-fit bg-zinc-50 p-6 font-bold">
+        <span className="text-celadon-green text-8xl w-fit bg-zinc-50 p-6 font-extrabold">
           JD Hernandez
         </span>
         <span className="text-4xl w-fit bg-zinc-50 p-6 mt-8">
@@ -84,20 +84,9 @@ export default function HomeBanner ({}) {
           </span>
           {
             SKILLS_DATA.map(({ title, name }) => (
-              clicked.includes(name)
-              ? (
-                <span
-                  key={name}
-                  className="select-none inline-flex items-center rounded-md bg-celadon-green px-2 py-1 text-2xl font-medium text-white"
-                >
-                  {title}
-                </span>
-              )
-              : (
-                <Badge fontClass="text-2xl">
-                  {title}
-                </Badge>
-              )
+              <Badge key={name} active={clicked.includes(name)} fontClass="text-2xl">
+                {title}
+              </Badge>
             ))
           }
         </span>
