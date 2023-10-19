@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from "react";
+import Badge from "@components/Badge";
 
 const SKILLS_DATA = [
   {
@@ -93,12 +94,9 @@ export default function HomeBanner ({}) {
                 </span>
               )
               : (
-                <span
-                  key={name}
-                  className="select-none inline-flex items-center rounded-md bg-gray-50 px-2 py-1 text-2xl font-medium text-celadon-green ring-2 ring-inset ring-celadon-green/10"
-                >
+                <Badge fontClass="text-2xl">
                   {title}
-                </span>
+                </Badge>
               )
             ))
           }

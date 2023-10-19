@@ -1,5 +1,7 @@
 'use client'
 
+import Badge from "@components/Badge";
+
 const PROJECTS = [
   {
     title: 'Insurance Administrator and Direct-to-Customer Web App',
@@ -102,7 +104,7 @@ const PROJECTS = [
 const Project = ({title, description, skills, company}) => {
   return (
     title &&
-    <div className="basis-full h-fit text-stone-700 font-mono cursor-pointer bg-zinc-50 outline outline-2 outline-celadon-green">
+    <div className="basis-1/3-gap-4 md:basis-1/2-gap-4 sm:basis-full h-fit text-stone-700 font-mono bg-zinc-50 outline outline-2 outline-celadon-green">
       <div className="bg-celadon-green w-fit px-4 py-2">
         <span className="text-2xl text-white font-bold">{title}</span>
       </div>
@@ -114,12 +116,9 @@ const Project = ({title, description, skills, company}) => {
           {
             skills.length > 0 &&
             skills.map((skillName) => (
-              <span
-                key={skillName}
-                className="select-none inline-flex items-center rounded-md bg-gray-50 px-2 py-1 font-medium text-celadon-green ring-2 ring-inset ring-celadon-green/10"
-              >
+              <Badge key={skillName} fontClass='font-medium'>
                 {skillName}
-              </span>
+              </Badge>
             ))
           }
         </div>
