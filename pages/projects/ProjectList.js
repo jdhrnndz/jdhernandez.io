@@ -53,7 +53,7 @@ const PROJECTS = [
     skills: [
       'Android',
     ],
-    company: 'Android Developer @ Stratpoint Technologies Inc., Philippines',
+    company: 'Android Developer @ Stratpoint Technologies Inc.',
   },
   {
     title: 'Project SoFa',
@@ -63,7 +63,7 @@ const PROJECTS = [
       'mySQL',
       'AWS Lambda',
     ],
-    company: 'Back-end Developer @ Stratpoint Technologies Inc., Philippines',
+    company: 'Back-end Developer @ Stratpoint Technologies Inc.',
   },
   {
     title: 'Project Unimart',
@@ -75,7 +75,7 @@ const PROJECTS = [
       'Jenkins',
       'Bootstrap',
     ],
-    company: 'Front-end Developer @ Stratpoint Technologies Inc., Philippines',
+    company: 'Front-end Developer @ Stratpoint Technologies Inc.',
   },
   {
     title: 'BatasQC',
@@ -90,7 +90,7 @@ const PROJECTS = [
   },
   {
     title: 'Personnel Management System',
-    description: 'A website formanaging personnels\' information and their departments, contributions, and violations. Admins have access to audit logs, statistics dashboard, and user privileges.',
+    description: 'A website for managing personnels\' information and their departments, contributions, and violations. Admins have access to audit logs, statistics dashboard, and user privileges.',
     skills: [
       'jQuery',
       'Semantic UI',
@@ -104,8 +104,8 @@ const PROJECTS = [
 const Project = ({title, description, skills, company}) => {
   return (
     title &&
-    <div className="basis-1/3-gap-4 md:basis-1/2-gap-4 sm:basis-full h-fit text-stone-700 font-mono bg-zinc-50 outline outline-2 outline-celadon-green">
-      <div className="bg-celadon-green w-fit px-4 py-2">
+    <div className="h-fit w-full text-stone-700 font-mono bg-zinc-50 outline outline-2 outline-celadon-green overflow-hidden max-w-">
+      <div className="relative bg-celadon-green w-fit h-fit px-4 after:bg-celadon-green after:skew after:h-full after:absolute after:w-12 after:-top-0 after:-right-2 after:shadow-stripes z-0 after:-z-[1]">
         <span className="text-2xl text-white font-bold">{title}</span>
       </div>
       <div className="p-4">
@@ -122,9 +122,9 @@ const Project = ({title, description, skills, company}) => {
             ))
           }
         </div>
-        <div className="italic">
-          {company}
-        </div>
+      </div>
+      <div className="bg-celadon-green/30 py-2 px-4">
+        {company}
       </div>
     </div>
   );
@@ -132,7 +132,7 @@ const Project = ({title, description, skills, company}) => {
 
 export default function ProjectList() {
   return (
-    <div className="flex flex-row flex-wrap place-items-start gap-4 pb-4">
+    <div className="grid 2xl:grid-cols-3 lg:grid-cols-2 md:grid-cols-1 grid-rows-['masonry'] flex-wrap place-items-start gap-4 pb-4 selection:bg-asda-green/50">
       {
         PROJECTS.map((item, index) => (
           <Project key={index} {...item} />

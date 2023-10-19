@@ -34,6 +34,13 @@ module.exports = {
       backdropBlur: {
         xs: '2px',
       },
+      boxShadow: {
+        'stripes': `
+          6px 0 white, 12px 0 rgb(var(--color-celadon-green) / 0.8),
+          18px 0 white, 24px 0 rgb(var(--color-celadon-green) / 0.6),
+          30px 0 white, 36px 0 rgb(var(--color-celadon-green) / 0.4),
+          42px 0 white, 48px 0 rgb(var(--color-celadon-green) / 0.2)`,
+      }
     },
     container: {
       center: true,
