@@ -4,7 +4,7 @@ import Badge from "@components/Badge";
 
 const PROJECTS = [
   {
-    title: 'Insurance Administrator and Direct-to-Customer Web App',
+    title: 'Haven Life',
     description: 'A SaaS application consisting of a web app for insurance providers to manage insurance policies, a web app for customers to apply for insurance products and organize their policies, and a collection of services for handling business logic, managing assets and documents, and integrating with third-party services.',
     skills: [
       'TypeScript',
@@ -26,7 +26,7 @@ const PROJECTS = [
     company: 'Back-end Developer @ VISEO Hong Kong Ltd.',
   },
   {
-    title: 'Project EMMA (AXA HK)',
+    title: 'Project EMMA @ AXA HK',
     description: 'A module in a mobile app that serves as a storage for information and documents pertinent to the user\'s family members and assets.',
     skills: [
       'JavaScript',
@@ -37,7 +37,7 @@ const PROJECTS = [
     company: 'Front-end Developer @ VISEO Philippines Inc.',
   },
   {
-    title: 'HCT Life (AXA HK)',
+    title: 'HCT Life @ AXA HK',
     description: 'A web app that helps to explore the network of doctors and hospitals working with the insurance provider.',
     skills: [
       'JavaScript',
@@ -56,7 +56,7 @@ const PROJECTS = [
     company: 'Android Developer @ Stratpoint Technologies Inc., Philippines',
   },
   {
-    title: 'Broadband Account Management App',
+    title: 'Project SoFa',
     description: 'A mobile app where subscribers manage their broadband account.',
     skills: [
       'node.js',
@@ -66,7 +66,7 @@ const PROJECTS = [
     company: 'Back-end Developer @ Stratpoint Technologies Inc., Philippines',
   },
   {
-    title: 'Telecom Roaming Subscription Portal',
+    title: 'Project Unimart',
     description: 'An e-commerce website that provides subscribers easy access to subscriptions and enables resellers to track customer registrations and sales.',
     skills: [
       'ReactJS',
