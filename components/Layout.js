@@ -8,12 +8,12 @@ export default function Layout({ children }) {
   return (
     <main>
       <AnimatedBackground />
-      <div className="container h-screen flex flex-col justify-start gap-y-4">
+      <header className="container h-screen flex flex-col justify-start gap-y-4">
         <SiteHeader>
           <Navigation />
         </SiteHeader>
         {children}
-      </div>
+      </header>
     </main>
   );
 }

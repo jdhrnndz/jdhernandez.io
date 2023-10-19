@@ -104,15 +104,13 @@ const PROJECTS = [
 const Project = ({title, description, skills, company}) => {
   return (
     title &&
-    <div className="h-fit w-full text-stone-700 font-mono bg-zinc-50 outline outline-2 outline-celadon-green overflow-hidden max-w-">
-      <div className="relative bg-celadon-green w-fit h-fit px-4 after:bg-celadon-green after:skew after:h-full after:absolute after:w-12 after:-top-0 after:-right-2 after:shadow-stripes z-0 after:-z-[1]">
-        <span className="text-2xl text-white font-bold">{title}</span>
-      </div>
+    <article className="h-fit w-full text-stone-700 font-mono bg-zinc-50 outline outline-2 outline-celadon-green overflow-hidden max-w-">
+      <header className="text-2xl text-white font-[Lekton] font-bold tracking-wide bg-celadon-green w-fit h-fit px-4 py-1 relative after:bg-inherit after:skew after:h-full after:absolute after:w-12 after:-top-0 after:-right-2 after:shadow-stripes z-0 after:-z-[1]">{title}</header>
       <div className="p-4">
-        <div className="text-lg">
+        <main className="text-lg mb-8">
           {description}
-        </div>
-        <div className="my-4 flex flex-wrap gap-2">
+        </main>
+        <section className="flex flex-wrap gap-2">
           {
             skills.length > 0 &&
             skills.map((skillName) => (
@@ -121,12 +119,12 @@ const Project = ({title, description, skills, company}) => {
               </Badge>
             ))
           }
-        </div>
+        </section>
       </div>
-      <div className="bg-celadon-green/30 py-2 px-4">
+      <footer className="bg-celadon-green/30 px-4 py-2">
         {company}
-      </div>
-    </div>
+      </footer>
+    </article>
   );
 };
 
