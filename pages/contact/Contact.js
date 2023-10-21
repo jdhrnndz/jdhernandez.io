@@ -24,7 +24,8 @@ export default function Contact() {
             Send me a message!
           </header>
         </hgroup>
-        <form name="contact" method="POST" netlify="true" className="flex flex-wrap flex-row gap-4 p-8" onSubmit={handleSubmit}>
+        <form name="contact" data-netlify="true" netlify="true" className="flex flex-wrap flex-row gap-4 p-8" onSubmit={handleSubmit}>
+          <input type="hidden" name="form-name" value="contact" />
           <input name="name" type="text" placeholder="John Doe" className="form-input basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"/>
           <input name="email" type="email" placeholder="johndoe@mail.com" className="form-input basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"/>
           <textarea name="message" placeholder="What's on your mind?" className="form-textarea basis-full col-span-2 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"/>
