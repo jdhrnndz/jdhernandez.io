@@ -59,15 +59,15 @@ export default function HomeBanner ({}) {
   const [clicked, setClicked] = useState([]);
 
   return (
-    <div className="flex-auto flex sm:flex-row xs:flex-col selection:bg-asda-green/50">
+    <div className="flex-auto flex flex-col-reverse sm:flex-row selection:bg-asda-green/50">
       <hgroup className="basis-3/5 text-left font-[Urbanist] flex flex-col justify-center">
-        <span className="text-7xl text-stone-600 w-fit bg-zinc-50 p-6 leading-3 font-bold">
+        <span className="text-6xl text-stone-600 w-fit bg-zinc-50 p-6 leading-3 font-bold">
           <span className="italic">Hello!</span> I'm
         </span>
-        <span className="text-celadon-green text-8xl w-fit bg-zinc-50 p-6 font-[Lekton] font-bold">
+        <span className="text-celadon-green text-7xl w-fit bg-zinc-50 p-6 font-[Lekton] font-bold">
           JD Hernandez
         </span>
-        <span className="text-4xl text-stone-500 w-fit bg-zinc-50 p-6 mt-8 leading-relaxed font-bold">
+        <span className="text-3xl text-stone-500 w-fit bg-zinc-50 p-6 mt-8 leading-relaxed font-bold">
           With over 8 years of dedicated experience in crafting user-friendly software solutions, I have built expertise in JavaScript and other software development technologies.
         </span>
         <div className="w-fit bg-zinc-50 p-6 mt-8 flex flex-row gap-4 text-center flex-wrap">
@@ -91,7 +91,7 @@ export default function HomeBanner ({}) {
           }
         </div>
       </hgroup>
-      <div className="basis-2/5 flex flex-col justify-center">
+      <div className="basis-2/5 flex flex-col justify-center p-4">
         <div className="relative h-fit w-fit mx-auto p-6">
           <img
             className="select-none mx-auto min-w-96 max-w-96 min-h-96 max-h-96 rounded-full border-8 border-zinc-50"
