@@ -18,7 +18,7 @@ const BUTTON_DATA = [
     href: routes.Contact,
   },
   {
-    title: 'Linkshrub ;)',
+    title: 'Linkshrub',
     href: routes.Linkshrub,
   }
 ]
@@ -42,7 +42,7 @@ const NavButtons = ({ title, href }) => {
 
 const Navigation = () => {
   return (
-    <div className="navigation">
+    <div className="flex flex-row justify-center">
       {
         BUTTON_DATA.map(item => (
           <NavButtons {...item} key={item.title} />
