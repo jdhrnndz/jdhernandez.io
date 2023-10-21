@@ -116,12 +116,7 @@ const setup = () => {
 const AnimatedBackground = () => {
   setup();
 
-  return (
-    <>
-      <canvas id="animated-bg-canvas" className="-z-50 absolute h-full w-full"></canvas>
-      <div className="absolute bg-red backdrop-blur-xs h-full w-full -z-40" />
-    </>
-  );
+  return (<canvas id="animated-bg-canvas" className="absolute -z-50 h-full w-full"></canvas>);
 }
 
 export default AnimatedBackground;
