@@ -104,13 +104,15 @@ const PROJECTS = [
 const Project = ({title, description, skills, company}) => {
   return (
     title &&
-    <article className="h-fit w-full text-stone-700 font-[Urbanist] bg-zinc-50 outline outline-2 outline-celadon-green overflow-hidden">
-      <header className="text-2xl text-white font-bold bg-celadon-green w-fit h-fit px-4 py-1 relative after:bg-inherit after:skew after:h-full after:absolute after:w-12 after:-top-0 after:-right-2 after:shadow-stripes z-0 after:-z-[1]">{title}</header>
-      <div className="p-4">
-        <main className="text-lg mb-8">
+    <article className="h-fit w-full text-stone-500 font-[Urbanist] bg-zinc-50 outline outline-2 outline-celadon-green/30 overflow-hidden">
+      <hgroup>
+        <header className="text-2xl text-white tracking-tight font-[Urbanist] font-bold bg-celadon-green w-fit h-fit pl-8 pr-4 py-1 relative after:bg-inherit after:skew after:h-full after:absolute after:w-12 after:-top-0 after:-right-2 after:shadow-stripes z-0 after:-z-[1]">{title}</header>
+      </hgroup>
+      <div className="px-8 py-4">
+        <main className="text-xl font-bold mb-8 leading-relaxed">
           {description}
         </main>
-        <section className="flex flex-wrap gap-2">
+        <section className="flex flex-wrap gap-2 justify-center">
           {
             skills.length > 0 &&
             skills.map((skillName) => (
@@ -121,7 +123,7 @@ const Project = ({title, description, skills, company}) => {
           }
         </section>
       </div>
-      <footer className="bg-celadon-green/30 px-4 py-2">
+      <footer className="bg-celadon-green/10 px-4 py-2 text-center">
         {company}
       </footer>
     </article>

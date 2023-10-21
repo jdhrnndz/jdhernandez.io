@@ -59,21 +59,21 @@ export default function HomeBanner ({}) {
   const [clicked, setClicked] = useState([]);
 
   return (
-    <div className="flex-auto grid grid-cols-2 grid-rows-1 selection:bg-asda-green/50">
-      <hgroup className="text-stone-600 text-left font-[Urbanist] flex flex-col justify-center">
-        <span className="text-7xl t w-fit bg-zinc-50 p-6 leading-3">
+    <div className="flex-auto flex sm:flex-row xs:flex-col selection:bg-asda-green/50">
+      <hgroup className="basis-3/5 text-left font-[Urbanist] flex flex-col justify-center">
+        <span className="text-7xl text-stone-600 w-fit bg-zinc-50 p-6 leading-3 font-bold">
           <span className="italic">Hello!</span> I'm
         </span>
-        <span className="text-celadon-green text-8xl w-fit bg-zinc-50 p-6 font-[Volkhov]">
+        <span className="text-celadon-green text-8xl w-fit bg-zinc-50 p-6 font-[Lekton] font-bold">
           JD Hernandez
         </span>
-        <span className="text-4xl w-fit bg-zinc-50 p-6 mt-8 leading-relaxed">
+        <span className="text-4xl text-stone-500 w-fit bg-zinc-50 p-6 mt-8 leading-relaxed font-bold">
           With over 8 years of dedicated experience in crafting user-friendly software solutions, I have built expertise in JavaScript and other software development technologies.
         </span>
         <div className="w-fit bg-zinc-50 p-6 mt-8 flex flex-row gap-4 text-center flex-wrap">
           <span
             key="counter"
-            className="group relative w-10 h-10 cursor-pointer select-none inline-flex items-center justify-center rounded-full bg-celadon-green px-2 text-2xl text-white font-mono"
+            className="group relative w-10 h-10 cursor-pointer select-none inline-flex items-center justify-center rounded-full bg-celadon-green px-2 text-2xl text-white font-[Lekton]"
           >
             {clicked.length}
             <small
@@ -91,8 +91,8 @@ export default function HomeBanner ({}) {
           }
         </div>
       </hgroup>
-      <div className="flex flex-col justify-center">
-        <div className="relative h-fit w-fit mx-auto p-104">
+      <div className="basis-2/5 flex flex-col justify-center">
+        <div className="relative h-fit w-fit mx-auto p-6">
           <img
             className="select-none mx-auto min-w-96 max-w-96 min-h-96 max-h-96 rounded-full border-8 border-zinc-50"
             alt="JD Hernandez's avatar image"
