@@ -17,6 +17,10 @@ const BUTTON_DATA = [
     title: 'Contact',
     href: routes.Contact,
   },
+  {
+    title: 'Linkshrub ;)',
+    href: routes.Linkshrub,
+  }
 ]
 
 const NavButtons = ({ title, href }) => {
