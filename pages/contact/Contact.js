@@ -1,6 +1,21 @@
 'use client'
 
 export default function Contact() {
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    const myForm = event.target;
+    const formData = new FormData(myForm);
+
+    fetch("/", {
+      method: "POST",
+      headers: { "Content-Type": "application/x-www-form-urlencoded" },
+      body: new URLSearchParams(formData).toString(),
+    })
+      .then(() => { myForm.reset(); })
+      .catch((error) => alert(error));
+  };
+
   return (
     <div className="flex flex-col mx-auto h-full justify-center w-8/12 gap-4">
       <div className="bg-zinc-50 text-stone-700 font-[Urbanist] outline outline-2 outline-celadon-green/30 selection:bg-asda-green/50">
@@ -9,10 +24,10 @@ export default function Contact() {
             Send me a message!
           </header>
         </hgroup>
-        <form name="contact" method="POST" netlify className="grid grid-cols-2 grid-rows-3 gap-4 p-8">
-          <input name="name" type="text" placeholder="John Doe" className="form-input border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"/>
-          <input name="email" type="email" placeholder="johndoe@mail.com" className="form-input border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"/>
-          <textarea name="message" placeholder="What's on your mind?" className="form-textarea col-span-2 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"/>
+        <form name="contact" method="POST" netlify="true" className="flex flex-wrap flex-row gap-4 p-8" onSubmit={handleSubmit}>
+          <input name="name" type="text" placeholder="John Doe" className="form-input basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"/>
+          <input name="email" type="email" placeholder="johndoe@mail.com" className="form-input basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"/>
+          <textarea name="message" placeholder="What's on your mind?" className="form-textarea basis-full col-span-2 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"/>
           <button type="submit" className="w-fit h-fit mx-auto form-input border-transparent col-span-2 align-middle group relative z-20 bg-white uppercase inline-block no-underline text-center tracking-widest py-2 px-5 outline outline-2 outline-asda-green overflow-hidden">
             <span className="absolute w-0 h-full bg-asda-green skew top-0 -left-6 -z-[1] transition-width duration-200 ease-in hover-fill group-hover:w-[150%]" />
             <span className="absolute w-0 h-full bg-celadon-green skew top-0 -left-6 -z-[2] transition-width duration-300 ease-in group-hover:duration-100 group-hover:ease-in-out group-hover:w-[150%]" />
