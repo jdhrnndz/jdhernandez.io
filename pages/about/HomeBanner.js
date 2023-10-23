@@ -61,8 +61,8 @@ export default function HomeBanner ({}) {
   return (
     <div className="flex-auto flex flex-col-reverse sm:flex-row selection:bg-asda-green/50">
       <hgroup className="basis-3/5 text-left font-[Urbanist] flex flex-col justify-center">
-        <span className="text-6xl text-stone-600 w-fit bg-zinc-50 p-6 leading-3 font-bold">
-          <span className="italic">Hello!</span> I'm
+        <span className="text-6xl text-stone-600 w-fit bg-zinc-50 p-6 font-bold">
+          <span className="italic">Hello, world!</span> I'm
         </span>
         <span className="text-celadon-green text-7xl w-fit bg-zinc-50 p-6 font-[Lekton] font-bold">
           JD Hernandez
