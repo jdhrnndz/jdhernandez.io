@@ -2,7 +2,7 @@
 
 import SiteHeader from "./SiteHeader";
 import Navigation from "./Navigation";
-import AnimatedBackground from '@components/AnimatedBackground';
+import AnimatedBackground from "./AnimatedBackground";
 
 export default function Layout({ children }) {
   return (

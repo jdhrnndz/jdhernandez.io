@@ -23,6 +23,5 @@
 }
 
 body {
-  background-color: theme('colors.zinc.50');
-  scrollbar-gutter: stable;
+  @apply bg-zinc-50;
 }
