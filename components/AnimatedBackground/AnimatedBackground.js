@@ -1,107 +1,41 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
-import { range, timer } from 'd3';
-import { computeWindowDimensions, drawLinks, drawNodes, generateNode, getColorScale, getMaxLinkThreshold, getMinLinkThreshold, getNodeCount, getOpacityScale, getScreenArea } from "./utils";
+import { computeWindowDimensions, setupBackgroundElements, setupDrawLoop } from "./utils";
+import AnimatedBackgroundStyles from "./AnimatedBackground.module.css";
 
 const useBackgroundAnimation = () => {
   const [windowDimensions, setWindowDimensions] = useState({ width: 0, height: 0 });
-
-  let nodeData;
-  // const nodeDataRef = useRef([]); // alternate resize behavior
   const canvasRef = useRef(null);
+  const debouncedSetter = useRef(null);
 
   useEffect(() => {
-    const windowDimensions = computeWindowDimensions();
-    const colorScale = getColorScale(windowDimensions.width);
-    const screenArea = getScreenArea(windowDimensions);
-    const nodeCount = getNodeCount(screenArea);
-    nodeData = range(nodeCount).map(() => generateNode(windowDimensions, colorScale));
-
-    // alternate resize behavior
-    // let nodeData = nodeDataRef.current;
-    // if (nodeCount > nodeData.length) {
-    //   nodeDataRef.current = [...nodeData, ...range(nodeCount - nodeData.length).map(() => generateNode(windowDimensions, colorScale))];
-    // } else {
-    //   nodeDataRef.current = nodeData.slice(0, nodeCount);
-    // }
-    const canvas = canvasRef.current;
-    // Set canvas properties
-    canvas.width = windowDimensions.width;
-    canvas.height = windowDimensions.height;
+    // TODO: check if this is really needed, forces a double initial render without debounce
+    setWindowDimensions({...computeWindowDimensions()});
 
     console.info('add resize event listener');
-    const resizeHandler = window.addEventListener('resize', (event) => {
-      setWindowDimensions({...computeWindowDimensions()});
+    const resizeHandler = window.addEventListener('resize', (_event) => {
+      clearTimeout(debouncedSetter.current);
+      debouncedSetter.current = setTimeout(() => setWindowDimensions({...computeWindowDimensions()}), 200);
     });
 
     return () => {
       console.info('remove resize event listener');
       window.removeEventListener('resize', resizeHandler);
-    }
+    };
   }, []);
 
   useEffect(() => {
-    const windowDimensions = computeWindowDimensions();
-    const colorScale = getColorScale(windowDimensions.width);
-    const screenArea = getScreenArea(windowDimensions);
-    const minLinks = getMinLinkThreshold(screenArea);
-    const maxLinks = getMaxLinkThreshold(screenArea);
-    const opacityScale = getOpacityScale(screenArea);
-    const nodeCount = getNodeCount(screenArea);
-    nodeData = range(nodeCount).map(() => generateNode(windowDimensions, colorScale));
-
-    // alternate resize behavior
-    // let nodeData = nodeDataRef.current;
-    // if (nodeCount > nodeData.length) {
-    //   nodeDataRef.current = [...nodeData, ...range(nodeCount - nodeData.length).map(() => generateNode(windowDimensions, colorScale))];
-    // } else {
-    //   nodeDataRef.current = nodeData.slice(0, nodeCount);
-    // }
-    const canvas = canvasRef.current;
-    // Set canvas properties
-    canvas.width = windowDimensions.width;
-    canvas.height = windowDimensions.height;
-    let context = canvas.getContext("2d");
-
-    const drawLoop = timer((_elapsed) => {
-      // Faster than resetting canvas' width and height
-      context.clearRect(0, 0, windowDimensions.width, windowDimensions.height);
-
-      for (let i = 0; i < nodeData.length; i++) {
-        // Apply movement to all nodes using x/yVelocity
-        nodeData[i].cy += nodeData[i].yVelocity;
-        if (nodeData[i].cy < 0 || windowDimensions.height < nodeData[i].cy) {
-          nodeData[i].yVelocity *= -1;
-        }
-
-        nodeData[i].cx += nodeData[i].xVelocity
-        if (nodeData[i].cx < 0 || windowDimensions.width < nodeData[i].cx) {
-          nodeData[i].xVelocity *= -1;
-        }
-
-        nodeData[i].color = colorScale(nodeData[i].cx);
-        drawNodes(context, nodeData[i]);
-        for (let j = i + 1; j < nodeData.length; j++) {
-          drawLinks(context, nodeData[i], nodeData[j], minLinks, maxLinks, opacityScale);
-        }
-      }
-    });
+    const drawLoop = setupDrawLoop(canvasRef, windowDimensions);
 
     return () => {
       drawLoop.stop();
     };
   }, [windowDimensions.width, windowDimensions.height]);
 
-  return ({
-    canvasRef,
-  });
+  return canvasRef;
 }
 
-const AnimatedBackground = () => {
-  const { canvasRef } = useBackgroundAnimation();
-
-  return <canvas ref={canvasRef} id="animated-bg-canvas" className="absolute top-0 left-0 -z-50 h-full w-full" />;
-}
+const AnimatedBackground = () => (<canvas ref={useBackgroundAnimation()} className={AnimatedBackgroundStyles.base} />);
 
 export default AnimatedBackground;

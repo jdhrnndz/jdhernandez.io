@@ -1,4 +1,4 @@
-import { randomUniform, rgb, scaleLinear, scaleSequential, select } from "d3";
+import { randomUniform, range, rgb, scaleLinear, scaleSequential, select, timer } from "d3";
 import { FULL_CIRCLE, GRADIENT, MOVE_SPEED } from './constants';
 
 export const computeWindowDimensions = () => {
@@ -11,12 +11,19 @@ export const computeWindowDimensions = () => {
 
   return { width, height };
 };
+
 export const getColorScale = (maxValue) => (scaleSequential((t) => rgb(GRADIENT(t))).domain([0, maxValue]));
+
 export const getScreenArea = ({width, height}) => (width * height);
+
 export const getMinLinkThreshold = (screenArea) => (screenArea * 0.001);
+
 export const getMaxLinkThreshold = (screenArea) => (screenArea * 0.01);
+
 export const getOpacityScale = (screenArea) => scaleLinear().domain([getMinLinkThreshold(screenArea), getMaxLinkThreshold(screenArea)]).range([1, 0.2]);
+
 export const getNodeCount = (screenArea) => (Math.max(50, Math.min(150, Math.round(screenArea / 10000))));
+
 export const generateNode = (windowDimensions, colorScale) => {
   let size = randomUniform(3, 5)();
   let cx = randomUniform(1 + size, windowDimensions.width - size)();
@@ -39,6 +46,35 @@ export const generateNode = (windowDimensions, colorScale) => {
     xVelocity, yVelocity,
   };
 };
+
+export const setupBackgroundElements = (canvasRef) => {
+  const windowDimensions = computeWindowDimensions();
+  const colorScale = getColorScale(windowDimensions.width);
+  const screenArea = getScreenArea(windowDimensions);
+  const nodeCount = getNodeCount(screenArea);
+
+  // alternate resize behavior, must be used with useRef
+  // let nodeData = nodeDataRef.current;
+  // if (nodeCount > nodeData.length) {
+  //   nodeDataRef.current = [...nodeData, ...range(nodeCount - nodeData.length).map(() => generateNode(windowDimensions, colorScale))];
+  // } else {
+  //   nodeDataRef.current = nodeData.slice(0, nodeCount);
+  // }
+
+  // Set canvas properties
+  const canvas = canvasRef.current;
+  canvas.width = windowDimensions.width;
+  canvas.height = windowDimensions.height;
+
+  return {
+    colorScale,
+    maxLinks: getMaxLinkThreshold(screenArea),
+    minLinks: getMinLinkThreshold(screenArea),
+    nodeData: range(nodeCount).map(() => generateNode(windowDimensions, colorScale)),
+    opacityScale: getOpacityScale(screenArea),
+  };
+}
+
 export const drawNodes = (context, node) => {
   context.fillStyle = node.color;
   context.beginPath();
@@ -59,3 +95,32 @@ export const drawLinks = (context, source, destination, minLinks, maxLinks, opac
     context.stroke();
   }
 };
+
+export const setupDrawLoop = (canvasRef, windowDimensions) => {
+  const { colorScale, maxLinks, minLinks, nodeData, opacityScale } = setupBackgroundElements(canvasRef);
+  let context = canvasRef.current.getContext("2d");
+
+  return (timer((_elapsed) => {
+    // Faster than resetting canvas' width and height
+    context.clearRect(0, 0, windowDimensions.width, windowDimensions.height);
+
+    for (let i = 0; i < nodeData.length; i++) {
+      // Apply movement to all nodes using x/yVelocity
+      nodeData[i].cy += nodeData[i].yVelocity;
+      if (nodeData[i].cy < 0 || windowDimensions.height < nodeData[i].cy) {
+        nodeData[i].yVelocity *= -1;
+      }
+
+      nodeData[i].cx += nodeData[i].xVelocity
+      if (nodeData[i].cx < 0 || windowDimensions.width < nodeData[i].cx) {
+        nodeData[i].xVelocity *= -1;
+      }
+
+      nodeData[i].color = colorScale(nodeData[i].cx);
+      drawNodes(context, nodeData[i]);
+      for (let j = i + 1; j < nodeData.length; j++) {
+        drawLinks(context, nodeData[i], nodeData[j], minLinks, maxLinks, opacityScale);
+      }
+    }
+  }));
+}
