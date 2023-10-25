@@ -102,7 +102,7 @@ export default function HomeBanner ({}) {
             SKILLS_DATA.map(({ animation, name, position, icon }) => (
               <button
                 key={`${name}-${animation}}`}
-                className={`absolute ${position} select-none cursor-pointer rounded-full bg-zinc-50 ring-2 ring-celadon-green p-3 ${animation} hover:pause`}
+                className={`absolute ${position} select-none cursor-pointer rounded-full bg-zinc-50 ring-2 ring-celadon-green p-3 ${animation} hover:pause after:absolute after:top-0 after:left-0 after:w-full after:h-full after:-z-0 after:ring-2 after:rounded-full after:ring-celadon-green after:hover:animate-ping`}
                 onClick={() => setClicked((prevClicked) => {
                   if (prevClicked.includes(name)) {
                     return prevClicked;
