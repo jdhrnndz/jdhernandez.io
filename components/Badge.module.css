@@ -1,0 +1,9 @@
+.base {
+  @apply font-[Lekton] select-none inline-flex items-center rounded-full px-4 py-1 ring-2 ring-inset ring-celadon-green/50 bg-celadon-green/10 text-celadon-green relative overflow-hidden
+    before:absolute before:w-0 before:h-full before:bg-celadon-green before:skew before:top-0 before:-left-6 before:duration-200 before:ease-in before:z-[1]
+    after:absolute after:w-full after:h-full after:text-celadon-green after:top-0 after:left-0 after:px-4 after:py-1 after:z-[2];
+}
+
+.active {
+  @apply after:text-white before:w-[150%];
+}
