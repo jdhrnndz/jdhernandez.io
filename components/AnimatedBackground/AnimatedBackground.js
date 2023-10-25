@@ -8,6 +8,7 @@ const useBackgroundAnimation = () => {
   const [windowDimensions, setWindowDimensions] = useState({ width: 0, height: 0 });
 
   let nodeData;
+  // const nodeDataRef = useRef([]); // alternate resize behavior
   const canvasRef = useRef(null);
 
   useEffect(() => {
@@ -16,6 +17,14 @@ const useBackgroundAnimation = () => {
     const screenArea = getScreenArea(windowDimensions);
     const nodeCount = getNodeCount(screenArea);
     nodeData = range(nodeCount).map(() => generateNode(windowDimensions, colorScale));
+
+    // alternate resize behavior
+    // let nodeData = nodeDataRef.current;
+    // if (nodeCount > nodeData.length) {
+    //   nodeDataRef.current = [...nodeData, ...range(nodeCount - nodeData.length).map(() => generateNode(windowDimensions, colorScale))];
+    // } else {
+    //   nodeDataRef.current = nodeData.slice(0, nodeCount);
+    // }
     const canvas = canvasRef.current;
     // Set canvas properties
     canvas.width = windowDimensions.width;
@@ -41,6 +50,14 @@ const useBackgroundAnimation = () => {
     const opacityScale = getOpacityScale(screenArea);
     const nodeCount = getNodeCount(screenArea);
     nodeData = range(nodeCount).map(() => generateNode(windowDimensions, colorScale));
+
+    // alternate resize behavior
+    // let nodeData = nodeDataRef.current;
+    // if (nodeCount > nodeData.length) {
+    //   nodeDataRef.current = [...nodeData, ...range(nodeCount - nodeData.length).map(() => generateNode(windowDimensions, colorScale))];
+    // } else {
+    //   nodeDataRef.current = nodeData.slice(0, nodeCount);
+    // }
     const canvas = canvasRef.current;
     // Set canvas properties
     canvas.width = windowDimensions.width;
