@@ -20,12 +20,14 @@ const FlashyButton = ({ type, isActive, children, ...rest }) => {
   const firstEffectClasses = classnames([
     FlashyButtonStyles.effect_base,
     FlashyButtonStyles.first_effect,
+    'skew',
     'group-hover:w-[150%]',
   ]);
 
   const secondEffectClasses = classnames([
     FlashyButtonStyles.effect_base,
     FlashyButtonStyles.second_effect,
+    'skew',
     'group-hover:w-[150%]',
     'group-hover:duration-100',
     'group-hover:ease-in-out',

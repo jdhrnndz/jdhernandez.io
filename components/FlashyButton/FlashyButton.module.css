@@ -7,7 +7,7 @@
 }
 
 .effect_base {
-  @apply absolute w-0 h-full top-0 -left-6 ease-in skew;
+  @apply absolute w-0 h-full top-0 -left-6 ease-in;
 }
 
 .first_effect {
