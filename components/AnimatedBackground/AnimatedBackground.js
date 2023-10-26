@@ -3,6 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import { computeWindowDimensions, setupBackgroundElements, setupDrawLoop } from "./utils";
 import AnimatedBackgroundStyles from "./AnimatedBackground.module.css";
+import { MyWindowEvent } from "@components/enums";
 
 const useBackgroundAnimation = () => {
   const [windowDimensions, setWindowDimensions] = useState({ width: 0, height: 0 });
@@ -14,14 +15,14 @@ const useBackgroundAnimation = () => {
     setWindowDimensions({...computeWindowDimensions()});
 
     console.info('add resize event listener');
-    const resizeHandler = window.addEventListener('resize', (_event) => {
+    const resizeHandler = window.addEventListener(MyWindowEvent.Resize, (_event) => {
       clearTimeout(debouncedSetter.current);
       debouncedSetter.current = setTimeout(() => setWindowDimensions({...computeWindowDimensions()}), 200);
     });
 
     return () => {
       console.info('remove resize event listener');
-      window.removeEventListener('resize', resizeHandler);
+      window.removeEventListener(MyWindowEvent.Resize, resizeHandler);
     };
   }, []);
 
