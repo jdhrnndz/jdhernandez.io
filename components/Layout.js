@@ -3,6 +3,7 @@
 import SiteHeader from "./SiteHeader";
 import Navigation from "./Navigation";
 import AnimatedBackground from "./AnimatedBackground";
+import Omnibar from "./Omnibar";
 
 export default function Layout({ children }) {
   return (
@@ -14,6 +15,7 @@ export default function Layout({ children }) {
         {children}
       </header>
       <AnimatedBackground />
+      <Omnibar />
     </main>
   );
 }
