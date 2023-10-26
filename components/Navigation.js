@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import routes from 'utils/routes';
 import { useRouter } from 'next/router';
+import FlashyButton from './FlashyButton';
 
 const BUTTON_DATA = [
   {
@@ -21,31 +22,20 @@ const BUTTON_DATA = [
     title: 'Linkshrub',
     href: routes.Linkshrub,
   }
-]
-
-const NavButtons = ({ title, href }) => {
-  const router = useRouter();
-  const bgClass = router.asPath === href ? 'bg-celadon-green' : 'bg-white';
-  const textClass = router.asPath === href ? 'text-white' : 'text-celadon-green';
-
-  return (
-    <Link href={href}>
-      <button className={`group relative z-20 ${bgClass} uppercase inline-block no-underline text-center tracking-widest py-2 px-5 outline outline-2 outline-celadon-green m-1.5 overflow-hidden`}>
-        <span className="absolute w-0 h-full bg-asda-green skew top-0 -left-6 -z-[1] duration-200 ease-in group-hover:w-[150%]" />
-        <span className="absolute w-0 h-full bg-celadon-green skew top-0 -left-6 -z-[2] duration-300 ease-in group-hover:duration-100 group-hover:ease-in-out group-hover:w-[150%]" />
-        <span className="absolute w-0 h-full top-0 left-0 -z-[3]" />
-        <span className={`uppercase no-underline text-center tracking-widest font-[Lekton] font-bold text-xl ${textClass} group-hover:text-white`}>{title}</span>
-      </button>
-    </Link>
-  );
-};
+];
 
 const Navigation = () => {
+  const router = useRouter();
+
   return (
     <div className="flex flex-row justify-center">
       {
         BUTTON_DATA.map(item => (
-          <NavButtons {...item} key={item.title} />
+          <Link href={item.href} key={item.title}>
+            <FlashyButton isActive={router.asPath === item.href}>
+                {item.title}
+            </FlashyButton>
+          </Link>
         ))
       }
     </div>

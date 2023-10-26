@@ -1,5 +1,3 @@
-'use client'
-
 import BadgeStyles from './Badge.module.css';
 import classnames from 'classnames';
 

@@ -1,0 +1,19 @@
+.base {
+  @apply relative z-20 uppercase inline-block no-underline text-center tracking-widest py-2 px-5 outline outline-2 outline-celadon-green m-1.5 overflow-hidden;
+}
+
+.text {
+  @apply uppercase no-underline text-center tracking-widest font-[Lekton] font-bold text-xl;
+}
+
+.effect_base {
+  @apply absolute w-0 h-full top-0 -left-6 ease-in skew;
+}
+
+.first_effect {
+  @apply bg-asda-green -z-[1] duration-200;
+}
+
+.second_effect {
+  @apply bg-celadon-green -z-[2] duration-300;
+}

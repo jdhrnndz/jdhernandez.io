@@ -1,5 +1,3 @@
-'use client'
-
 import SiteHeader from "./SiteHeader";
 import Navigation from "./Navigation";
 import AnimatedBackground from "./AnimatedBackground";
