@@ -1,13 +1,13 @@
-describe('sample test', () => {
+describe('HomeBanner test', () => {
   beforeEach(() => {
     cy.visit('/')
   })
 
-  it('displays the resources text', () => {
-    cy.get('h1')
-    .contains('Welcome to my app!');
+  it('displays the name', () => {
+    cy.get('hgroup')
+    .contains('JD Hernandez');
   })
-  it('renders the Netlify logo image', () => {
+  it('renders the profile image', () => {
     cy.get('img')
     .should('be.visible')
     .and(($img) => {
