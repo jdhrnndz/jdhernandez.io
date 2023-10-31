@@ -21,7 +21,7 @@ export const MyMagicString = {
   MessageSent: "Your message has been sent!",
   Contact: {
     title: "Contact",
-    header: "Send me a message!",
+    header: "Let's Chat! Say Hello",
     cta: "Send",
     placeholder: {
       name: "Your name",

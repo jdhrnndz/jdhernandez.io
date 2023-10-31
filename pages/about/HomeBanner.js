@@ -77,12 +77,14 @@ export default function HomeBanner ({}) {
   return (
     <div className="flex-auto flex flex-col-reverse sm:flex-row selection:bg-asda-green/50">
       <hgroup className="basis-3/5 text-left font-[Urbanist] flex flex-col justify-center">
-        <span className="text-stone-600 text-6xl w-fit bg-zinc-50 p-6 font-bold">
-          <span className="italic">Hello, world!</span> I'm
+        <span className="text-stone-600 text-6xl w-fit bg-zinc-50 p-6 font-bold leading-[2.5rem]">
+          Hello, World! I'm
         </span>
-        <span className="text-celadon-green text-7xl w-fit bg-zinc-50 p-6 font-[Lekton] font-bold flex flex-col items-start sm:items-baseline sm:flex-row">
-          {MyMagicString.MyName}
-          <RobotHeadSvg className="inline-block h-14 sm:ml-8" />
+        <span className="flex flex-col items-top sm:flex-row bg-celadon-green p-6 w-fit">
+          <span className="text-white text-7xl w-fit font-[Lekton] font-bold">
+            {MyMagicString.MyName}
+          </span>
+          <RobotHeadSvg className="inline-block h-14 w-fit sm:ml-8 justify-self-start" primaryColor="white" secondaryColor="mediumspringgreen" />
         </span>
         <span className="text-3xl text-stone-500 w-fit bg-zinc-50 p-6 mt-8 leading-relaxed font-bold">
           {MyMagicString.MyDescription}
@@ -109,7 +111,7 @@ export default function HomeBanner ({}) {
         </div>
       </hgroup>
       <div className="basis-2/5 flex flex-col justify-center p-4">
-        <div className="relative w-96 h-96 mx-auto p-6">
+        <div className="relative w-96 h-96 mx-auto my-6 sm:p-8">
           <img
             src="/jdhernandez.jpg"
             className="absolute top-0 left-0 select-none mx-auto w-full h-full rounded-full border-8 border-zinc-50"
