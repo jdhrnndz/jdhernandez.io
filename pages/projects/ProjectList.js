@@ -113,7 +113,7 @@ const PROJECTS = [
 const Project = ({name, title, description, skills, company}) => {
   return (
     title &&
-    <article className="group basis-full h-fit w-full text-stone-500 font-[Urbanist] bg-zinc-50 outline outline-2 outline-celadon-green/30 grid grid-rows-1 grid-cols-6 grid-flow-col" >
+    <article className="group basis-full h-fit w-full text-stone-500 font-[Urbanist] bg-zinc-50 outline outline-2 outline-celadon-green/30 grid grid-rows-1 grid-cols-6 grid-flow-col mx-6" >
       <div className="col-span-2 w-full min-h-80 max-h-96 overflow-hidden shadow-inner">
         <img alt={`Preview of ${title}`} src={`/project-previews/${name}.png`} className="object-cover w-full h-full transition-transform group-hover:scale-125 group-hover:transition-transform bg-hero-pattern" />
       </div>

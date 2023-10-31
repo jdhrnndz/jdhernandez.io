@@ -42,21 +42,21 @@ export default function Contact() {
             required
             type="text"
             placeholder={MyMagicString.Contact.placeholder.name}
-            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"
+            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10 text-xl "
           />
           <input
             name="email"
             required
             type="email"
             placeholder={MyMagicString.Contact.placeholder.email}
-            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"
+            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10 text-xl "
           />
           <textarea
             name="message"
             required
             placeholder={MyMagicString.Contact.placeholder.message}
             rows="5"
-            className="form-textarea focus:border-asda-green resize-none basis-full col-span-2 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"
+            className="form-textarea focus:border-asda-green resize-none basis-full col-span-2 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10 text-xl "
           />
           <div className="mx-auto">
             <FlashyButton type="submit">
