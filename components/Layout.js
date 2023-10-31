@@ -2,6 +2,7 @@ import SiteHeader from "./SiteHeader";
 import Navigation from "./Navigation";
 import AnimatedBackground from "./AnimatedBackground";
 import Omnibar from "./Omnibar";
+import DrawerNavigation from "./DrawerNavigation";
 
 export default function Layout({ children }) {
   return (
@@ -12,6 +13,7 @@ export default function Layout({ children }) {
         </SiteHeader>
         {children}
       </header>
+      <DrawerNavigation />
       <AnimatedBackground />
       <Omnibar />
     </main>

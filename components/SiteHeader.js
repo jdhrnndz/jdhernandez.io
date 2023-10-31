@@ -1,6 +1,6 @@
 const SiteHeader = ({ children }) => {
   return (
-    <header className="z-50 flex-initial py-2 select-none">
+    <header className="z-30 flex-initial py-2 select-none">
       {children}
     </header>
   )

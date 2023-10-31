@@ -27,17 +27,21 @@ const Navigation = () => {
   return (
     <div className="flex flex-row justify-center">
       <Link href={'/'}>
-        <span className="bg-zinc-50 uppercase no-underline text-center text-celadon-green tracking-widest font-[Lekton] font-bold text-xl inline-block py-2 px-5 m-1.5 cursor-pointer">{MyMagicString.MyName}</span>
+        <span className="bg-zinc-50 uppercase no-underline text-center text-celadon-green tracking-widest font-[Lekton] font-bold text-xl inline-block py-2 px-5 m-1.5 cursor-pointer">
+          {MyMagicString.MyName}
+        </span>
       </Link>
-      {
-        BUTTON_DATA.map(item => (
-          <Link href={item.href} key={item.title}>
-            <FlashyButton isActive={router.asPath === item.href}>
-              {item.title}
-            </FlashyButton>
-          </Link>
-        ))
-      }
+      <span className="hidden sm:block">
+        {
+          BUTTON_DATA.map(item => (
+            <Link href={item.href} key={item.title}>
+              <FlashyButton isActive={router.asPath === item.href}>
+                {item.title}
+              </FlashyButton>
+            </Link>
+          ))
+        }
+      </span>
     </div>
   );
 };

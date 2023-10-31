@@ -24,7 +24,7 @@ export default function Contact() {
 
   return (
     <div className="flex flex-col mx-auto h-full justify-center w-8/12 gap-4">
-      <div className="bg-zinc-50 text-stone-700 font-[Urbanist] outline outline-2 outline-celadon-green/30 selection:bg-asda-green/50">
+      <div className="bg-zinc-50 text-stone-700 font-[Urbanist] outline outline-2 outline-celadon-green/30 selection:bg-asda-green/50 overflow-hidden">
         <hgroup className="relative bg-celadon-green w-fit h-fit px-8 py-4 after:bg-celadon-green after:skew after:h-full after:absolute after:w-12 after:-top-0 after:-right-2 after:shadow-stripes z-0 after:-z-[1]">
           <header className="text-2xl text-white font-bold tracking-wide">
             {MyMagicString.Contact.header}
@@ -42,14 +42,14 @@ export default function Contact() {
             required
             type="text"
             placeholder={MyMagicString.Contact.placeholder.name}
-            className="form-input focus:border-asda-green basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"
+            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"
           />
           <input
             name="email"
             required
             type="email"
             placeholder={MyMagicString.Contact.placeholder.email}
-            className="form-input focus:border-asda-green basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"
+            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10"
           />
           <textarea
             name="message"

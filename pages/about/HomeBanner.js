@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Badge from "@components/Badge";
 import { MyMagicString } from "@components/enums";
+import RobotHeadSvg from "@components/RobotSvg";
 
 const SKILLS_DATA = [
   {
@@ -79,8 +80,9 @@ export default function HomeBanner ({}) {
         <span className="text-stone-600 text-6xl w-fit bg-zinc-50 p-6 font-bold">
           <span className="italic">Hello, world!</span> I'm
         </span>
-        <span className="text-celadon-green text-7xl w-fit bg-zinc-50 p-6 font-[Lekton] font-bold">
+        <span className="text-celadon-green text-7xl w-fit bg-zinc-50 p-6 font-[Lekton] font-bold flex flex-col items-start sm:items-baseline sm:flex-row">
           {MyMagicString.MyName}
+          <RobotHeadSvg className="inline-block h-14 sm:ml-8" />
         </span>
         <span className="text-3xl text-stone-500 w-fit bg-zinc-50 p-6 mt-8 leading-relaxed font-bold">
           {MyMagicString.MyDescription}
