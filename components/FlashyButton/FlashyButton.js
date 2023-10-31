@@ -1,6 +1,5 @@
 'use client'
 
-import { MyMagicStrings } from "@components/enums";
 import FlashyButtonStyles from "./FlashyButton.module.css";
 import classnames from "classnames";
 

@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Badge from "@components/Badge";
+import { MyMagicString } from "@components/enums";
 
 const SKILLS_DATA = [
   {
@@ -79,10 +80,10 @@ export default function HomeBanner ({}) {
           <span className="italic">Hello, world!</span> I'm
         </span>
         <span className="text-celadon-green text-7xl w-fit bg-zinc-50 p-6 font-[Lekton] font-bold">
-          JD Hernandez
+          {MyMagicString.MyName}
         </span>
         <span className="text-3xl text-stone-500 w-fit bg-zinc-50 p-6 mt-8 leading-relaxed font-bold">
-          With over 8 years of dedicated experience in crafting user-friendly software solutions, I have built expertise in JavaScript and other software development technologies.
+          {MyMagicString.MyDescription}
         </span>
         <div className="w-fit bg-zinc-50 p-6 mt-8 flex flex-row gap-4 text-center flex-wrap">
           <span
@@ -93,7 +94,7 @@ export default function HomeBanner ({}) {
             <small
               className="pointer-events-none absolute py-1 px-2 rounded text-sm text-stone-700 -top-9 left-0 w-max bg-zinc-50 outline outline-1 outline-stone-500 opacity-0 transition-opacity group-hover:opacity-100"
             >
-              Find and click the corresponding icons!
+              {MyMagicString.Minigame.hint}
             </small>
           </span>
           {
@@ -108,9 +109,9 @@ export default function HomeBanner ({}) {
       <div className="basis-2/5 flex flex-col justify-center p-4">
         <div className="relative w-96 h-96 mx-auto p-6">
           <img
-            className="absolute top-0 left-0 select-none mx-auto w-full h-full rounded-full border-8 border-zinc-50"
-            alt="JD Hernandez's avatar image"
             src="/jdhernandez.jpg"
+            className="absolute top-0 left-0 select-none mx-auto w-full h-full rounded-full border-8 border-zinc-50"
+            alt={MyMagicString.MyPicture}
           />
           {
             SKILLS_DATA.map(({ animation, name, position, icon }) => (

@@ -4,36 +4,41 @@ const Links = [
   {
     title: 'LinkedIn',
     url: 'https://www.linkedin.com/in/jdhrnndz',
-    iconSlug: 'linkedin',
+    name: 'linkedin',
+    iconUrl: 'https://cdn.simpleicons.org/linkedin',
   },
   {
     title: 'GitHub',
     url: 'https://github.com/jdhrnndz',
-    iconSlug: 'github',
+    name: 'github',
+    iconUrl: 'https://cdn.simpleicons.org/github',
   },
   {
     title: 'Stack Overflow',
     url: 'https://stackoverflow.com/users/2511541/jd-hernandez',
-    iconSlug: 'stackoverflow',
+    name: 'stackoverflow',
+    iconUrl: 'https://cdn.simpleicons.org/stackoverflow',
   },
   {
     title: 'Monkeytype',
     url: 'https://monkeytype.com/profile/jdhrnndz',
-    iconSlug: 'monkeytype',
+    name: 'monkeytype',
+    iconUrl: 'https://cdn.simpleicons.org/monkeytype',
   },
   {
     title: 'Holopin',
     url: 'https://holopin.io/@jdhrnndz',
-    iconSlug: '',
+    name: 'holopin',
+    iconUrl: 'https://www.holopin.io/favicon.ico',
   }
 ]
 
 const Linkshrub = () => (
   <div className="flex flex-col mx-auto h-full justify-center w-8/12 gap-4">
     {
-      Links.filter(({ iconSlug }) => iconSlug).map(({ title, url, iconSlug }) => (
-        <article key={iconSlug} className="flex flex-row px-8 py-4 group rounded-full bg-zinc-50 outline outline-2 outline-celadon-green/50">
-          <img height="32" width="32" src={`https://cdn.simpleicons.org/${iconSlug}`} className="basis-1 transition-transform group-hover:scale-110 group-hover:transition-transform" />
+      Links.filter(({ name }) => name).map(({ title, url, iconUrl, name }) => (
+        <article key={name} className="flex flex-row px-8 py-4 group rounded-full bg-zinc-50 outline outline-2 outline-celadon-green/50">
+          <img height="32" width="32" src={iconUrl} className="basis-1 transition-transform group-hover:scale-110 group-hover:transition-transform" />
           <a className="basis-full text-center text-celadon-green text-2xl font-[Urbanist] group-hover:underline group-hover:decoration-double" href={url} target="_blank">{title}</a>
         </article>
       ))
