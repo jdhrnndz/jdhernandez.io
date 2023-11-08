@@ -37,9 +37,9 @@ const Linkshrub = () => (
   <div className="flex flex-col mx-auto h-full justify-center w-8/12 gap-4">
     {
       Links.filter(({ name }) => name).map(({ title, url, iconUrl, name }) => (
-        <article key={name} className="flex flex-row px-8 py-4 group rounded-full bg-zinc-50 outline outline-2 outline-celadon-green/50">
+        <article key={name} className="flex flex-row px-4 py-2 sm:px-8 sm:py-4 group rounded-full bg-zinc-50 outline outline-2 outline-celadon-green/50">
           <img height="32" width="32" src={iconUrl} className="basis-1 transition-transform group-hover:scale-110 group-hover:transition-transform" />
-          <a className="basis-full text-center text-celadon-green text-2xl font-[Urbanist] group-hover:underline group-hover:decoration-double" href={url} target="_blank">{title}</a>
+          <a className="basis-full text-center text-celadon-green text-lg sm:text-2xl font-[Urbanist] group-hover:underline group-hover:decoration-double" href={url} target="_blank">{title}</a>
         </article>
       ))
     }

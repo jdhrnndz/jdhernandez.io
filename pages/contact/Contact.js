@@ -23,10 +23,10 @@ export default function Contact() {
   };
 
   return (
-    <div className="flex flex-col mx-auto h-full justify-center w-8/12 gap-4">
+    <div className="flex flex-col mx-auto h-full justify-center w-fit sm:w-8/12 gap-4">
       <div className="bg-zinc-50 text-stone-700 font-[Urbanist] outline outline-2 outline-celadon-green/30 selection:bg-asda-green/50 overflow-hidden">
         <hgroup className="relative bg-celadon-green w-fit h-fit px-8 py-4 after:bg-celadon-green after:skew after:h-full after:absolute after:w-12 after:-top-0 after:-right-2 after:shadow-stripes z-0 after:-z-[1]">
-          <header className="text-2xl text-white font-bold tracking-wide">
+          <header className="text-lg sm:text-2xl text-white font-bold tracking-wide">
             {MyMagicString.Contact.header}
           </header>
         </hgroup>
@@ -42,21 +42,21 @@ export default function Contact() {
             required
             type="text"
             placeholder={MyMagicString.Contact.placeholder.name}
-            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10 text-xl font-bold tracking-wide"
+            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10 text-base sm:text-xl font-bold tracking-wide"
           />
           <input
             name="email"
             required
             type="email"
             placeholder={MyMagicString.Contact.placeholder.email}
-            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10 text-xl font-bold tracking-wide"
+            className="form-input focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10 text-base sm:text-xl font-bold tracking-wide"
           />
           <textarea
             name="message"
             required
             placeholder={MyMagicString.Contact.placeholder.message}
             rows="5"
-            className="form-textarea focus:border-asda-green resize-none basis-full col-span-2 border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10 text-xl font-bold tracking-wide"
+            className="form-textarea focus:border-asda-green resize-none basis-full border-transparent outline outline-2 outline-celadon-green/30 shadow-inner bg-celadon-green/10 text-base sm:text-xl font-bold tracking-wide"
           />
           <div className="mx-auto">
             <FlashyButton type="submit">

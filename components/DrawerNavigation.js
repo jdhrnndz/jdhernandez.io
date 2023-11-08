@@ -48,13 +48,13 @@ const DrawerNavigation = () => {
   return (
    <>
       <button className="sm:hidden absolute top-0 left-0 px-8 py-4 z-40" onClick={openDrawer}>
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2f847c" className="h-12 w-12">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2f847c" className="h-8 w-8">
           <path d="M3,6H21V8H3V6M3,11H21V13H3V11M3,16H21V18H3V16Z" />
         </svg>
       </button>
-      <div className={`sm:hidden absolute shadow-lg z-50 bg-zinc-50 h-full w-3/4 p-8 flex flex-col gap-6 -top-0 -left-3/4 ease-in-out transition-transform ${isDrawerOpen? 'translate-x-full': ''}`}>
+      <div className={`sm:hidden absolute shadow-lg z-50 bg-zinc-50 h-full w-3/4 px-8 py-4 flex flex-col gap-6 -top-0 -left-3/4 ease-in-out transition-transform ${isDrawerOpen? 'translate-x-full': ''}`}>
         <button className="w-fit self-end" onClick={closeDrawer}>
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2f847c" className="h-12 w-12">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="#2f847c" className="h-8 w-8">
             <path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" />
           </svg>
         </button>
