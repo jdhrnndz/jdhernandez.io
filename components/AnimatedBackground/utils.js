@@ -6,8 +6,8 @@ export const computeWindowDimensions = () => {
     d = document,
     e = d.documentElement,
     body = select("body");
-    const width = window.innerWidth || e.clientWidth || body.clientWidth;
-    const height = window.innerHeight || e.clientHeight || body.clientHeight;
+    const width = w.innerWidth || e.clientWidth || body.clientWidth;
+    const height = w.innerHeight || e.clientHeight || body.clientHeight;
 
   return { width, height };
 };
