@@ -79,7 +79,7 @@ const SkillsButton = ({ name, setClicked, icon }) => (
 export default function HomeBanner ({}) {
   const [clicked, setClicked] = useState([]);
 
-  const skillsBlob = [
+  const skillsBlob1 = [
     [
       BlobEnum.Empty,
       ({ width, height }) => <BlobEnum.EndLeft width={width} height={height}><SkillsButton name='reactjs' icon={SKILLS_DATA.reactjs.icon} setClicked={setClicked}/></BlobEnum.EndLeft>,
@@ -104,7 +104,8 @@ export default function HomeBanner ({}) {
       BlobEnum.EndRight,
       BlobEnum.Empty,
     ],
-    Array(6).fill(BlobEnum.Empty),
+  ];
+  const skillsBlob2 = [
     [
       BlobEnum.Empty,
       BlobEnum.Empty,
@@ -133,8 +134,8 @@ export default function HomeBanner ({}) {
       BlobEnum.Empty,
       BlobEnum.LeftConnector,
       BlobEnum.ConnectorFill,
-      BlobEnum.ConnectorFill,
       BlobEnum.RightConnector,
+      BlobEnum.Empty,
       BlobEnum.Empty,
     ],
     [
@@ -184,12 +185,13 @@ export default function HomeBanner ({}) {
       </hgroup>
       <div className="basis-2/5 relative">
         <div className="w-full h-full flex flex-col items-center justify-center gap-4">
+          <BlobThingy data={skillsBlob1} className="-mb-10" />
           <img
             src="/jdhernandez.jpg"
-            className="select-none w-48 h-48 sm:w-48 sm:h-48 rounded-full outline-8 outline-zinc-50 outline"
+            className="select-none w-48 h-48 sm:w-80 sm:h-80 rounded-full outline-8 outline-zinc-50 outline"
             alt={MyMagicString.MyPicture}
           />
-          <BlobThingy data={skillsBlob} />
+          <BlobThingy data={skillsBlob2} />
         </div>
       </div>
     </div>

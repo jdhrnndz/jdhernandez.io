@@ -1,5 +1,7 @@
 'use client'
 
+import BlobThingy from "@components/BlobThingy";
+
 const Links = [
   {
     title: 'LinkedIn',
@@ -34,7 +36,7 @@ const Links = [
 ]
 
 const Linkshrub = () => (
-  <div className="flex flex-col mx-auto h-full justify-center w-8/12 gap-4">
+  <div className="flex flex-col mx-auto h-full justify-center w-2/3 sm:w-1/3 gap-4">
     {
       Links.filter(({ name }) => name).map(({ title, url, iconUrl, name }) => (
         <article key={name} className="flex flex-row px-4 py-2 sm:px-8 sm:py-4 group rounded-full bg-zinc-50 outline outline-2 outline-celadon-green/50">
@@ -43,6 +45,7 @@ const Linkshrub = () => (
         </article>
       ))
     }
+    <BlobThingy />
   </div>
 );
 
