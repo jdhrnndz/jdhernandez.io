@@ -1,8 +1,7 @@
 const LeftConnector = () => (
   <svg className="w-fit h-full fill-celadon-green" viewBox="0 0 100 100" role="none">
     <mask id="circle">
-      <rect fill="white" x="0" width="50" height="100"></rect>
-      <rect fill="white" x="50" width="50" height="100"></rect>
+      <rect fill="white" x="0" width="100" height="100"></rect>
       <circle fill="black" cx="0" cy="50" r="50" />
     </mask>
     <g mask="url(#circle)">
@@ -14,8 +13,7 @@ const LeftConnector = () => (
 const RightConnector = () => (
   <svg className="h-full fill-celadon-green" viewBox="0 0 100 100" role="none">
     <mask id="circle2">
-      <rect fill="white" x="0" width="50" height="100"></rect>
-      <rect fill="white" x="50" width="50" height="100"></rect>
+      <rect fill="white" x="0" width="100" height="100"></rect>
       <circle fill="black" cx="100" cy="50" r="50" />
     </mask>
     <g mask="url(#circle2)">
