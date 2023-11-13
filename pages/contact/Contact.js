@@ -12,7 +12,7 @@ const ButtonState = {
 }
 
 export default function Contact() {
-  const [buttonState, setButtonState] = useState(ButtonState.Done);
+  const [buttonState, setButtonState] = useState(ButtonState.Idle);
 
   const handleSubmit = (event) => {
     if (buttonState !== ButtonState.Idle) return;

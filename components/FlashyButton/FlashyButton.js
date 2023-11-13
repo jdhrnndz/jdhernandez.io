@@ -4,7 +4,7 @@ import classnames from "classnames";
 
 const FlashyButton = ({ type, isActive, children, ...rest }) => {
   const buttonClasses = classnames([
-    'relative h-fit w-fit z-20 uppercase inline-block no-underline text-center tracking-widest whitespace-nowrap py-2 px-5 outline outline-2 outline-celadon-green m-1.5 overflow-clip rounded-md transition-width',
+    'relative h-fit z-20 uppercase inline-block no-underline text-center tracking-widest whitespace-nowrap py-2 px-5 outline outline-2 outline-celadon-green m-1.5 overflow-clip rounded-md transition-width',
     isActive ? 'bg-celadon-green' : 'bg-white',
     'group',
   ]);
