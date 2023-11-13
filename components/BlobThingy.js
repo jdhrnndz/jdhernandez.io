@@ -44,7 +44,7 @@ export const BlobEnum = {
 }
 
 const BlobThingy = ({ contentHeightClass, connectorHeightClass, widthClass, data, className }) => (
-  <div className={`mx-auto select-none w-fit h-fit grid grid-rows-[1fr_auto] grid-cols-${data[0].length} ${{className}}`}>
+  <div className={`mx-auto select-none w-fit h-fit grid grid-rows-[1fr_auto] grid-cols-${data[0].length} ${className}`}>
     {
       data.map((blobRow, rowIndex) => (
         blobRow.map((BlobCol, colIndex) => <BlobCol width={widthClass} height={rowIndex % 2 === 0 ? contentHeightClass : connectorHeightClass} key={`${rowIndex}-${colIndex}`} />)

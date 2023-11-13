@@ -150,12 +150,12 @@ export default function HomeBanner ({}) {
 
   return (
     <div className="flex-auto flex flex-col-reverse sm:flex-row selection:bg-asda-green/50">
-      <hgroup className="basis-3/5 text-justify sm:text-right font-[Urbanist] flex flex-col justify-center items-center sm:items-end">
+      <hgroup className="basis-3/5 text-justify sm:text-right font-[Urbanist] flex flex-col sm:justify-center items-center sm:items-end">
         <span className="text-stone-600 text-3xl sm:text-6xl w-fit bg-zinc-50 p-4 pl-6 sm:p-6 sm:pl-10 font-bold leading-[2.5rem] justify-end">
           Hello, World! I'm
         </span>
         <span className="flex flex-row items-top justify-center bg-celadon-green p-4 pl-6 sm:p-6 sm:pl-10 w-fit flex-nowrap rounded-full rounded-br-none mb-4 sm:mb-8">
-          <span className="text-white text-4xl sm:text-7xl w-fit font-[Lekton] font-bold">
+          <span className="text-white text-4xl sm:text-7xl w-fit font-[Lekton] font-bold whitespace-nowrap">
             {MyMagicString.MyName}
           </span>
         </span>
@@ -185,13 +185,13 @@ export default function HomeBanner ({}) {
       </hgroup>
       <div className="basis-2/5 relative">
         <div className="w-full h-full flex flex-col items-center justify-center gap-4">
-          <BlobThingy data={skillsBlob1} className="-mb-10" />
+          <BlobThingy data={skillsBlob1} className="z-10 -mb-12 pr-20" />
           <img
             src="/jdhernandez.jpg"
-            className="select-none w-48 h-48 sm:w-80 sm:h-80 rounded-full outline-8 outline-zinc-50 outline"
+            className="z-0 select-none w-48 h-48 sm:w-80 sm:h-80 rounded-full outline-8 outline-zinc-50 outline"
             alt={MyMagicString.MyPicture}
           />
-          <BlobThingy data={skillsBlob2} />
+          <BlobThingy data={skillsBlob2} className="z-10 -mt-12 pl-20" />
         </div>
       </div>
     </div>
