@@ -19,6 +19,11 @@ module.exports = {
           '0%, 100%': { transform: 'translateY(-12.5%)' },
           '50%': { transform: 'translateY(12.5%)' },
         },
+        fullsend: {
+          '0%, 80%': { transform: 'translateY(0)' },
+          '40%': { transform: 'translateY(-12.5%)' },
+          '100%': { transform: 'translateX(200%)'},
+        },
       },
       animation: {
         'floating': 'floating 1s ease-in-out infinite',
@@ -26,6 +31,7 @@ module.exports = {
         'floating-3': 'floating 3s ease-in-out infinite',
         'floating-5': 'floating 5s ease-in-out infinite',
         'floating-8': 'floating 8s ease-in-out infinite',
+        'fullsend': 'fullsend 1s ease-out forwards',
       },
       flexBasis: {
         "1/3-gap-4": "calc(33.3% - (2/3 * 1rem))",
@@ -40,7 +46,10 @@ module.exports = {
           18px 0 white, 24px 0 rgb(var(--color-celadon-green) / 0.6),
           30px 0 white, 36px 0 rgb(var(--color-celadon-green) / 0.4),
           42px 0 white, 48px 0 rgb(var(--color-celadon-green) / 0.2)`,
-      }
+      },
+      transitionProperty: {
+        'width': 'width',
+      },
     },
     container: {
       center: true,
