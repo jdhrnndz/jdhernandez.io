@@ -23,11 +23,30 @@ const RightConnector = () => (
 );
 
 export const BlobEnum = {
-  'Empty': ({ width, height }) => <div className={`${width} ${height}`}></div>,
-  'Island': ({ width, height, children }) => <div className={`${width} ${height} bg-celadon-green rounded-full relative flex justify-center items-center`}>{children}</div>,
-  'Fill': ({ width, height, children }) => <div className={`${width} ${height} bg-celadon-green relative flex justify-center items-center`}>{children}</div>,
-  'EndLeft': ({ width, height, children }) => <div className={`${width} ${height} bg-celadon-green rounded-l-full relative flex justify-center items-center`}>{children}</div>,
-  'EndRight': ({ width, height, children }) => <div className={`${width} ${height} bg-celadon-green rounded-r-full relative flex justify-center items-center`}>{children}</div>,
+  'Empty': ({ width, height }) => (
+    <div className={`${width} ${height}`}>
+    </div>
+  ),
+  'Island': ({ width, height, children }) => (
+    <div className={`${width} ${height} bg-celadon-green rounded-full relative flex justify-center items-center`}>
+      {children}
+    </div>
+  ),
+  'Fill': ({ width, height, children }) => (
+    <div className={`${width} ${height} bg-celadon-green relative flex justify-center items-center`}>
+      {children}
+    </div>
+  ),
+  'EndLeft': ({ width, height, children }) => (
+    <div className={`${width} ${height} bg-celadon-green rounded-l-full relative flex justify-center items-center`}>
+      {children}
+    </div>
+  ),
+  'EndRight': ({ width, height, children }) => (
+    <div className={`${width} ${height} bg-celadon-green rounded-r-full relative flex justify-center items-center`}>
+      {children}
+    </div>
+  ),
   'LeftConnector': ({ width, height }) => (
     <div className={`${width} ${height} flex flex-row justify-end`}>
       <LeftConnector />
@@ -38,7 +57,10 @@ export const BlobEnum = {
       <RightConnector />
     </div>
   ),
-  'ConnectorFill': ({ width, height }) => <div className={`${width} ${height} bg-celadon-green`}></div>,
+  'ConnectorFill': ({ width, height }) => (
+    <div className={`${width} ${height} bg-celadon-green`}>
+    </div>
+  ),
 }
 
 const BlobThingy = ({ contentHeightClass, connectorHeightClass, widthClass, data, className }) => (

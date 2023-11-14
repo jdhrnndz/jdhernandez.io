@@ -64,7 +64,7 @@ const SKILLS_DATA = {
 const SkillsButton = ({ name, setClicked, icon }) => (
   <button
     key={`${name}`}
-    className={`w-7 h-7 sm:w-14 sm:h-14 -m-4 sm:-m-7 select-none cursor-pointer rounded-full bg-zinc-50 ring-2 ring-celadon-green p-1.5 sm:p-3`}
+    className={`w-7 h-7 sm:w-14 sm:h-14 -m-4 sm:-m-7 select-none cursor-pointer rounded-full bg-zinc-50 ring-celadon-green/0 z-10 p-1.5 sm:p-3`}
     onClick={() => setClicked((prevClicked) => {
       if (prevClicked.includes(name)) {
         return prevClicked;
