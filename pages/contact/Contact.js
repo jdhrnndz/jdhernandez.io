@@ -59,9 +59,9 @@ export default function Contact() {
         {MyMagicString.Contact.header}
       </header>
       <div class="w-fit h-fit grid grid-rows-[1fr_auto] grid-cols-6">
-        <BlobEnum.LeftConnector width="w-16" height="h-4" />
-        <BlobEnum.ConnectorFill width="w-16" height="h-4" />
-        <BlobEnum.RightConnector width="w-16" height="h-4" />
+        <BlobEnum.LeftConnector width="w-9 sm:w-16" height="h-4" />
+        <BlobEnum.ConnectorFill width="w-9 sm:w-16" height="h-4" />
+        <BlobEnum.RightConnector width="w-9 sm:w-16" height="h-4" />
       </div>
       <div className="text-stone-700 font-[Urbanist] selection:bg-asda-green/50">
         <form name="contact" data-netlify="true" netlify="true" className="flex flex-wrap flex-row gap-4 max-h-full" onSubmit={handleSubmit}>
