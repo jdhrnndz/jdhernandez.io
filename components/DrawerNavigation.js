@@ -66,7 +66,7 @@ const DrawerNavigation = () => {
             {MyMagicString.MyName}
           </span>
         </Link>
-        <RobotHeadSvg className="h-11" primaryColor="#57534e" secondaryColor="#2f847c" />
+        <RobotHeadSvg className="h-11 w-fit self-center" primaryColor="#57534e" secondaryColor="#2f847c" />
         {
           BUTTON_DATA.map(item => (
             <Link href={item.href} key={item.title}>
