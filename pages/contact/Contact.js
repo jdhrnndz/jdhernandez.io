@@ -58,7 +58,7 @@ export default function Contact() {
       <header className="bg-celadon-green w-fit h-fit px-4 py-2 sm:px-8 sm:py-4 rounded-full text-lg sm:text-2xl text-white font-bold tracking-wide">
         {MyMagicString.Contact.header}
       </header>
-      <div class="w-fit h-fit grid grid-rows-[1fr_auto] grid-cols-6">
+      <div className="w-fit h-fit grid grid-rows-[1fr_auto] grid-cols-6">
         <BlobEnum.LeftConnector width="w-9 sm:w-16" height="h-4" />
         <BlobEnum.ConnectorFill width="w-9 sm:w-16" height="h-4" />
         <BlobEnum.RightConnector width="w-9 sm:w-16" height="h-4" />
