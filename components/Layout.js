@@ -6,7 +6,7 @@ import DrawerNavigation from "./DrawerNavigation";
 
 export default function Layout({ children }) {
   return (
-    <main className="overflow-y-auto">
+    <main className="overflow-y-auto relative overflow-x-hidden">
       <header className="container h-screen flex flex-col justify-start gap-y-4">
         <SiteHeader>
           <Navigation />
