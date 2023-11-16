@@ -54,16 +54,11 @@ export default function Contact() {
   }
 
   return (
-    <div className="flex flex-col mx-auto h-full justify-center w-fit sm:w-8/12 px-12 py-8">
+    <div className="flex flex-col mx-auto h-full justify-center w-fit sm:w-8/12 px-12 py-8 gap-4 selection:bg-asda-green/50">
       <header className="bg-celadon-green w-fit h-fit px-4 py-2 sm:px-8 sm:py-4 rounded-full text-lg sm:text-2xl text-white font-bold tracking-wide">
         {MyMagicString.Contact.header}
       </header>
-      <div className="w-fit h-fit grid grid-rows-[1fr_auto] grid-cols-6">
-        <BlobEnum.LeftConnector width="w-9 sm:w-16" height="h-4" />
-        <BlobEnum.ConnectorFill width="w-9 sm:w-16" height="h-4" />
-        <BlobEnum.RightConnector width="w-9 sm:w-16" height="h-4" />
-      </div>
-      <div className="text-stone-700 font-[Urbanist] selection:bg-asda-green/50">
+      <div className="text-stone-700 font-[Urbanist]">
         <form name="contact" data-netlify="true" netlify="true" className="flex flex-wrap flex-row gap-4 max-h-full" onSubmit={handleSubmit}>
           <input
             type="hidden"
