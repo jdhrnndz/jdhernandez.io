@@ -188,7 +188,7 @@ export default function HomeBanner ({}) {
           <BlobThingy data={skillsBlob1} className="z-10 -mb-12 pr-20" />
           <img
             src="/jdhernandez.jpg"
-            className="z-0 select-none w-48 h-48 sm:w-80 sm:h-80 rounded-full outline-8 outline-zinc-50 outline"
+            className="z-0 select-none w-48 sm:w-80 square rounded-full outline-8 outline-zinc-50 outline"
             alt={MyMagicString.MyPicture}
           />
           <BlobThingy data={skillsBlob2} className="z-10 -mt-12 pl-20" />

@@ -1,6 +1,6 @@
 export const BlobEnum = {
-  'Empty': ({ width, height }) => (
-    <div className={`${width} ${height}`}>
+  'Empty': () => (
+    <div>
     </div>
   ),
   'Island': ({ width, height, children }) => (
@@ -24,26 +24,12 @@ export const BlobEnum = {
     </div>
   ),
   'LeftConnector': ({ height }) => (
-    <svg className={`${height} fill-celadon-green justify-self-end`} viewBox="0 0 100 100" role="none">
-      <mask id="circle">
-        <rect fill="white" x="0" width="100" height="100"></rect>
-        <circle fill="black" cx="0" cy="50" r="50" />
-      </mask>
-      <g mask="url(#circle)">
-        <rect x="0" width="100" height="100"></rect>
-      </g>
-    </svg>
+    <div className={`${height} relative after:h-full outline-none after:outline-none after:square after:bg-left-connector after:absolute after:top-0 after:right-0`}>
+    </div>
   ),
   'RightConnector':  ({ height }) => (
-    <svg className={`${height} fill-celadon-green`} viewBox="0 0 100 100" role="none">
-      <mask id="circle2">
-        <rect fill="white" x="0" width="100" height="100"></rect>
-        <circle fill="black" cx="100" cy="50" r="50" />
-      </mask>
-      <g mask="url(#circle2)">
-        <rect x="0" width="100" height="100"></rect>
-      </g>
-    </svg>
+    <div className={`${height} relative after:h-full outline-none after:outline-none after:square after:bg-right-connector after:absolute after:top-0 after:left-0`}>
+    </div>
   ),
   'ConnectorFill': ({ height }) => (
     <div className={`${height} bg-celadon-green`}>

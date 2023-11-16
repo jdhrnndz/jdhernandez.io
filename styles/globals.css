@@ -13,6 +13,15 @@
     -ms-transform: skewX(-45deg);
     transform: skewX(-45deg);
   }
+  .bg-right-connector {
+    background: radial-gradient(circle at 90% 50%,rgba(0,0,0,0) 50%,#2f847c 50%) 100% 100%/100% 100%;
+  }
+  .bg-left-connector {
+    background: radial-gradient(circle at 10% 50%,rgba(0,0,0,0) 50%,#2f847c 50%) 100% 100%/100% 100%;
+  }
+  .square {
+    aspect-ratio: 1 / 1;
+  }
 }
 
 @layer base {
