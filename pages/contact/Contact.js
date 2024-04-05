@@ -23,7 +23,7 @@ export default function Contact() {
     const myForm = event.target;
     const formData = new FormData(myForm);
 
-    fetch("/", {
+    fetch("https://script.google.com/macros/s/AKfycbxXzNUXFJ5SAEnUTCLKPIisQZcv88AMg57_zzFEDD5y6doMRX5WlQb7I5zcazWt2wbN/exec", {
       method: "POST",
       headers: { "Content-Type": "application/x-www-form-urlencoded" },
       body: new URLSearchParams(formData).toString(),
@@ -59,7 +59,7 @@ export default function Contact() {
         {MyMagicString.Contact.header}
       </header>
       <div className="text-stone-700 font-[Urbanist]">
-        <form name="contact" data-netlify="true" netlify="true" className="flex flex-wrap flex-row gap-4 max-h-full" onSubmit={handleSubmit}>
+        <form name="contact" className="flex flex-wrap flex-row gap-4 max-h-full" onSubmit={handleSubmit}>
           <input
             type="hidden"
             required
@@ -67,21 +67,21 @@ export default function Contact() {
             value="contact"
           />
           <input
-            name="name"
+            name="Name"
             required
             type="text"
             placeholder={MyMagicString.Contact.placeholder.name}
             className="form-input px-4 py-2 sm:px-8 sm:py-4 focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green shadow-inner bg-zinc-100 text-base sm:text-xl font-bold tracking-wide rounded-full"
           />
           <input
-            name="email"
+            name="Email"
             required
             type="email"
             placeholder={MyMagicString.Contact.placeholder.email}
             className="form-input px-4 py-2 sm:px-8 sm:py-4 focus:border-asda-green basis-full sm:basis-1/2-gap-4 border-transparent outline outline-2 outline-celadon-green shadow-inner bg-zinc-100 text-base sm:text-xl font-bold tracking-wide rounded-full"
           />
           <textarea
-            name="message"
+            name="Message"
             required
             placeholder={MyMagicString.Contact.placeholder.message}
             rows="5"

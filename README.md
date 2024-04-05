@@ -1,6 +1,4 @@
-# JDHernandez.io :robot:
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/3785049e-6730-484e-bfbc-da6fd767157a/deploy-status)](https://app.netlify.com/sites/mellifluous-peony-b987fd/deploys)
+# JDHernandez.io :robot:winget install --id Git.Git -e --source winget
 
 :wave::technologist:
 Hello, I'm JD. This is my web portfolio.
@@ -17,3 +15,4 @@ Reach out and say hello! [Contact](https://jdhernandez.io/contact)
 ## Thanks to
 
 [Simple Icons](https://simpleicons.org/) for the icons
+[Levi Nunnink](https://github.com/levinunnink/html-form-to-google-sheet) for the simple form submission solution

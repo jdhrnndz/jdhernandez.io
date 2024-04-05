@@ -1,8 +1,7 @@
 'use client'
 
 import { useEffect, useRef, useState } from "react";
-import { computeWindowDimensions, setupBackgroundElements, setupDrawLoop } from "./utils";
-import AnimatedBackgroundStyles from "./AnimatedBackground.module.css";
+import { computeWindowDimensions, setupDrawLoop } from "./utils";
 import { MyWindowEvent } from "@components/enums";
 
 const useBackgroundAnimation = () => {
@@ -37,6 +36,6 @@ const useBackgroundAnimation = () => {
   return canvasRef;
 }
 
-const AnimatedBackground = () => (<canvas ref={useBackgroundAnimation()} className={AnimatedBackgroundStyles.base} />);
+const AnimatedBackground = () => (<canvas ref={useBackgroundAnimation()} className="absolute top-0 left-0 -z-50 h-full w-full" />);
 
 export default AnimatedBackground;
