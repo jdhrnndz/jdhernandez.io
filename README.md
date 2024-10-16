@@ -1,4 +1,4 @@
-# JDHernandez.io :robot:winget install --id Git.Git -e --source winget
+# JDHernandez.io :robot:
 
 :wave::technologist:
 Hello, I'm JD. This is my web portfolio.
