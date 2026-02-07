@@ -29,7 +29,8 @@ const FlashyButton = ({ type, isActive, children, ...rest }) => {
     'group-hover:left-0 group-hover:duration-100 group-hover:ease-in-out',
   ]);
 
-  return ( // TODO: identify the magic props here, i.e. in the rest variable
+  return (
+    // TODO: identify the magic props here, i.e. in the rest variable
     <button type={type} className={buttonClasses} {...rest}>
       <span className={firstEffectClasses} />
       <span className={secondEffectClasses} />

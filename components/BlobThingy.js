@@ -37,27 +37,29 @@ export const BlobEnum = {
   ),
 }
 
-const BlobThingy = ({ contentHeightClass, connectorHeightClass, widthClass, data, className }) => (
-  <div className={`mx-auto select-none w-fit h-fit grid grid-rows-[minmax(0, 4rem)_auto] grid-cols-6 ${className}`}>
-    {
-      data.map((blobRow, rowIndex) => (
-        blobRow.map((BlobCol, colIndex) => <BlobCol width={widthClass} height={rowIndex % 2 === 0 ? contentHeightClass : connectorHeightClass} key={`${rowIndex}-${colIndex}`} />)
-      ))
-    }
-  </div>
-);
-
-BlobThingy.defaultProps = {
-  contentHeightClass: "h-9 sm:h-16",
-  connectorHeightClass: "h-2 sm:h-4",
-  widthClass: "w-9 sm:w-16",
-  data: [
+const BlobThingy = ({
+  contentHeightClass = "h-9 sm:h-16", 
+  connectorHeightClass = "h-2 sm:h-4",
+  widthClass = "w-9 sm:w-16",
+  data = [
     [BlobEnum.Empty, BlobEnum.EndLeft, BlobEnum.Fill, BlobEnum.EndRight, BlobEnum.Empty, BlobEnum.Empty],
     [BlobEnum.Empty, BlobEnum.LeftConnector, BlobEnum.ConnectorFill, BlobEnum.RightConnector, BlobEnum.Empty, BlobEnum.Empty],
     [BlobEnum.EndLeft, BlobEnum.Fill, BlobEnum.Fill, BlobEnum.Fill, BlobEnum.Fill, BlobEnum.EndRight],
     [BlobEnum.Empty, BlobEnum.Empty, BlobEnum.Empty, BlobEnum.LeftConnector, BlobEnum.RightConnector, BlobEnum.Empty],
     [BlobEnum.Empty, BlobEnum.Empty, BlobEnum.Empty, BlobEnum.EndLeft, BlobEnum.EndRight, BlobEnum.Empty],
   ],
-};
+  className
+}) => (
+  <div className={`mx-auto select-none w-fit h-fit grid grid-rows-[minmax(0, 4rem)_auto] grid-cols-6 ${className}`}>
+    {
+      data.map((blobRow, rowIndex) => {
+        console.log("Row:", rowIndex, blobRow);
+        return (
+          blobRow.map((BlobCol, colIndex) => <BlobCol width={widthClass} height={rowIndex % 2 === 0 ? contentHeightClass : connectorHeightClass} key={`${rowIndex}-${colIndex}`} />)
+        )
+      })
+    }
+  </div>
+);
 
 export default BlobThingy;
